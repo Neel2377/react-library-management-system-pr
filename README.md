@@ -6,7 +6,7 @@ A lightweight React-based library management system starter built with Vite and 
 
 # Deploy Link
 
-- Link: 
+- Link: https://react-library-management-system-pr.vercel.app/
 
 --- 
 
@@ -110,11 +110,3 @@ Short documentation has been added in the `docs/` folder:
 No license is included by default. If you'd like, I can add an `MIT` license or another license you prefer — tell me which one.
 
 ---
-
-## 💬 Contact
-
-If you have questions, open an issue or contact the maintainer.
-
----
-
-Happy hacking! ✨
