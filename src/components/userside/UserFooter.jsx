@@ -55,21 +55,21 @@ function UserFooter() {
               </li>
 
               <li className="link-item">
-                <NavLink to="/aboutus" className="footer-link">
+                <NavLink to="#" className="footer-link">
                   <span className="link-bullet">•</span>
                   <span className="link-text">About Us</span>
                 </NavLink>
               </li>
 
               <li className="link-item">
-                <NavLink to="/contactus" className="footer-link">
+                <NavLink to="#" className="footer-link">
                   <span className="link-bullet">•</span>
                   <span className="link-text">Contact</span>
                 </NavLink>
               </li>
 
               <li className="link-item">
-                <NavLink to="/my-books" className="footer-link">
+                <NavLink to="#" className="footer-link">
                   <span className="link-bullet">•</span>
                   <span className="link-text">My Books</span>
                 </NavLink>
