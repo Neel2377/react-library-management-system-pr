@@ -1,10 +1,11 @@
+import { NavLink } from "react-router-dom";
+
 function UserFooter() {
   return (
     <>
       <footer className="library-footer">
-        {/* Main Footer Content */}
         <div className="footer-container">
-          {/* Left Section - Brand Info */}
+          {/* Left Section */}
           <div className="footer-left">
             <div className="brand-container">
               <div className="brand-icon">📚</div>
@@ -20,23 +21,26 @@ function UserFooter() {
             <div className="social-container">
               <div className="social-title">Follow Us</div>
               <div className="social-icons">
-                <a href="#" className="social-link" aria-label="Facebook">
+                <NavLink to="#" className="social-link" aria-label="Facebook">
                   <span className="social-icon">📘</span>
-                </a>
-                <a href="#" className="social-link" aria-label="Twitter">
+                </NavLink>
+
+                <NavLink to="#" className="social-link" aria-label="Twitter">
                   <span className="social-icon">🐦</span>
-                </a>
-                <a href="#" className="social-link" aria-label="Instagram">
+                </NavLink>
+
+                <NavLink to="#" className="social-link" aria-label="Instagram">
                   <span className="social-icon">📸</span>
-                </a>
-                <a href="#" className="social-link" aria-label="LinkedIn">
+                </NavLink>
+
+                <NavLink to="#" className="social-link" aria-label="LinkedIn">
                   <span className="social-icon">💼</span>
-                </a>
+                </NavLink>
               </div>
             </div>
           </div>
 
-          {/* Center Section - Quick Links */}
+          {/* Center Section */}
           <div className="footer-center">
             <div className="links-header">
               <div className="links-icon">🔗</div>
@@ -44,58 +48,70 @@ function UserFooter() {
             </div>
             <ul className="links-list">
               <li className="link-item">
-                <a href="/" className="footer-link">
+                <NavLink to="/" className="footer-link">
                   <span className="link-bullet">•</span>
                   <span className="link-text">Home</span>
-                </a>
+                </NavLink>
               </li>
+
               <li className="link-item">
-                <a href="/aboutus" className="footer-link">
+                <NavLink to="/aboutus" className="footer-link">
                   <span className="link-bullet">•</span>
                   <span className="link-text">About Us</span>
-                </a>
+                </NavLink>
               </li>
+
               <li className="link-item">
-                <a href="/contactus" className="footer-link">
+                <NavLink to="/contactus" className="footer-link">
                   <span className="link-bullet">•</span>
                   <span className="link-text">Contact</span>
-                </a>
+                </NavLink>
               </li>
+
               <li className="link-item">
-                <a href="/my-books" className="footer-link">
+                <NavLink to="/my-books" className="footer-link">
                   <span className="link-bullet">•</span>
                   <span className="link-text">My Books</span>
-                </a>
+                </NavLink>
               </li>
             </ul>
           </div>
 
-          {/* Right Section - Contact Info */}
+          {/* Right Section */}
           <div className="footer-right">
             <div className="contact-header">
               <div className="contact-icon">📞</div>
               <h4 className="contact-title">Contact Info</h4>
             </div>
+
             <div className="contact-details">
               <div className="contact-item">
                 <div className="contact-type">Email</div>
-                <a href="mailto:library@example.com" className="contact-value">
+                <NavLink
+                  to="mailto:library@example.com"
+                  className="contact-value"
+                >
                   <span className="value-icon">📧</span>
                   library@example.com
-                </a>
+                </NavLink>
               </div>
+
               <div className="contact-item">
                 <div className="contact-type">Phone</div>
-                <a href="tel:+919876543210" className="contact-value">
+                <NavLink
+                  to="tel:+919876543210"
+                  className="contact-value"
+                >
                   <span className="value-icon">📱</span>
                   +91 98765 43210
-                </a>
+                </NavLink>
               </div>
+
               <div className="contact-item">
                 <div className="contact-type">Hours</div>
                 <div className="contact-value">
                   <span className="value-icon">🕒</span>
-                  Mon-Fri: 9AM-6PM
+                  Mon–Fri: 9AM–6PM
                 </div>
               </div>
             </div>
