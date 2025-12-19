@@ -7,7 +7,9 @@ function UserHeader({ onLogout }) {
     JSON.parse(localStorage.getItem("currentUser"))
   );
   const [dropdownOpen, setDropdownOpen] = useState(false);
+  const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
   const dropdownRef = useRef(null);
+  const mobileMenuRef = useRef(null);
 
   useEffect(() => {
     const updateUser = () => {
@@ -18,21 +20,36 @@ function UserHeader({ onLogout }) {
     window.addEventListener("profileUpdated", updateUser);
     window.addEventListener("storage", updateUser);
 
-    // Close dropdown when clicking outside
     const handleClickOutside = (event) => {
+      // Close dropdown if clicked outside
       if (dropdownRef.current && !dropdownRef.current.contains(event.target)) {
         setDropdownOpen(false);
+      }
+      // Close mobile menu if clicked outside
+      if (
+        mobileMenuOpen &&
+        mobileMenuRef.current &&
+        !mobileMenuRef.current.contains(event.target) &&
+        !event.target.closest(".mobile-menu-toggle")
+      ) {
+        setMobileMenuOpen(false);
       }
     };
 
     document.addEventListener("mousedown", handleClickOutside);
+    document.addEventListener("touchstart", handleClickOutside);
 
     return () => {
       window.removeEventListener("profileUpdated", updateUser);
       window.removeEventListener("storage", updateUser);
       document.removeEventListener("mousedown", handleClickOutside);
+      document.removeEventListener("touchstart", handleClickOutside);
     };
-  }, []);
+  }, [mobileMenuOpen]);
+
+  const toggleMobileMenu = () => {
+    setMobileMenuOpen(!mobileMenuOpen);
+  };
 
   const userName = currentUser?.name || currentUser?.username || "User";
   const userImage =
@@ -41,8 +58,20 @@ function UserHeader({ onLogout }) {
 
   return (
     <>
-      <nav className="user-header">
+      <nav className="user-header justify-content-between">
         <div className="header-container">
+          {/* Mobile Menu Toggle Button */}
+          <button
+            className={`mobile-menu-toggle ${mobileMenuOpen ? "open" : ""}`}
+            onClick={toggleMobileMenu}
+            aria-label="Toggle navigation menu"
+            aria-expanded={mobileMenuOpen}
+          >
+            <span className="hamburger-line"></span>
+            <span className="hamburger-line"></span>
+            <span className="hamburger-line"></span>
+          </button>
+
           {/* Logo/Brand Section */}
           <div className="header-brand">
             <NavLink to="/" className="brand-link">
@@ -53,32 +82,49 @@ function UserHeader({ onLogout }) {
             </NavLink>
           </div>
 
-          {/* Navigation Links */}
-          <div className="header-nav">
+          {/* Desktop Navigation Links */}
+          <div className="header-nav js">
             <ul className="nav-menu">
               <li className="nav-item">
-                <NavLink to="/" className="nav-link" end>
+                <NavLink
+                  to="/"
+                  className="nav-link"
+                  end
+                  onClick={() => setMobileMenuOpen(false)}
+                >
                   <span className="link-icon">🏠</span>
                   <span className="link-text">Home</span>
                 </NavLink>
               </li>
 
               <li className="nav-item">
-                <NavLink to="/my-books" className="nav-link">
+                <NavLink
+                  to="/my-books"
+                  className="nav-link"
+                  onClick={() => setMobileMenuOpen(false)}
+                >
                   <span className="link-icon">📖</span>
                   <span className="link-text">My Books</span>
                 </NavLink>
               </li>
 
               <li className="nav-item">
-                <NavLink to="/aboutus" className="nav-link">
+                <NavLink
+                  to="/aboutus"
+                  className="nav-link"
+                  onClick={() => setMobileMenuOpen(false)}
+                >
                   <span className="link-icon">ℹ️</span>
                   <span className="link-text">About</span>
                 </NavLink>
               </li>
 
               <li className="nav-item">
-                <NavLink to="/contactus" className="nav-link">
+                <NavLink
+                  to="/contactus"
+                  className="nav-link"
+                  onClick={() => setMobileMenuOpen(false)}
+                >
                   <span className="link-icon">📞</span>
                   <span className="link-text">Contact</span>
                 </NavLink>
@@ -134,7 +180,10 @@ function UserHeader({ onLogout }) {
                     <NavLink
                       to="/myprofile"
                       className="dropdown-item"
-                      onClick={() => setDropdownOpen(false)}
+                      onClick={() => {
+                        setDropdownOpen(false);
+                        setMobileMenuOpen(false);
+                      }}
                     >
                       <span className="item-icon">👤</span>
                       <span className="item-text">My Profile</span>
@@ -143,7 +192,10 @@ function UserHeader({ onLogout }) {
                     <NavLink
                       to="/my-books"
                       className="dropdown-item text-black"
-                      onClick={() => setDropdownOpen(false)}
+                      onClick={() => {
+                        setDropdownOpen(false);
+                        setMobileMenuOpen(false);
+                      }}
                     >
                       <span className="item-icon">📚</span>
                       <span className="item-text">My Library</span>
@@ -161,6 +213,7 @@ function UserHeader({ onLogout }) {
                       className="dropdown-item logout-item"
                       onClick={() => {
                         setDropdownOpen(false);
+                        setMobileMenuOpen(false);
                         onLogout();
                       }}
                     >
@@ -172,7 +225,10 @@ function UserHeader({ onLogout }) {
                   <NavLink
                     to="/login"
                     className="dropdown-item"
-                    onClick={() => setDropdownOpen(false)}
+                    onClick={() => {
+                      setDropdownOpen(false);
+                      setMobileMenuOpen(false);
+                    }}
                   >
                     <span className="item-icon">🔑</span>
                     <span className="item-text">Sign In</span>
@@ -182,6 +238,146 @@ function UserHeader({ onLogout }) {
             </div>
           </div>
         </div>
+
+        {/* Mobile Navigation Menu */}
+        <div
+          className={`mobile-nav-menu ${mobileMenuOpen ? "show" : ""}`}
+          ref={mobileMenuRef}
+        >
+          <div className="mobile-nav-header">
+            <div className="mobile-user-info">
+              <div className="mobile-avatar">
+                <img src={userImage} alt="User" />
+                {isAuth && <div className="mobile-online-indicator"></div>}
+              </div>
+              <div className="mobile-user-details">
+                <span className="mobile-user-name">{userName}</span>
+                {currentUser?.email && (
+                  <span className="mobile-user-email">{currentUser.email}</span>
+                )}
+              </div>
+            </div>
+          </div>
+
+          <ul className="mobile-nav-links">
+            <li className="mobile-nav-item">
+              <NavLink
+                to="/"
+                className={({ isActive }) =>
+                  `mobile-nav-link ${isActive ? "active" : ""}`
+                }
+                end
+                onClick={toggleMobileMenu}
+              >
+                <span className="mobile-link-icon">🏠</span>
+                <span className="mobile-link-text">Home</span>
+              </NavLink>
+            </li>
+
+            <li className="mobile-nav-item">
+              <NavLink
+                to="/my-books"
+                className={({ isActive }) =>
+                  `mobile-nav-link ${isActive ? "active" : ""}`
+                }
+                onClick={toggleMobileMenu}
+              >
+                <span className="mobile-link-icon">📖</span>
+                <span className="mobile-link-text">My Books</span>
+              </NavLink>
+            </li>
+
+            <li className="mobile-nav-item">
+              <NavLink
+                to="/aboutus"
+                className={({ isActive }) =>
+                  `mobile-nav-link ${isActive ? "active" : ""}`
+                }
+                onClick={toggleMobileMenu}
+              >
+                <span className="mobile-link-icon">ℹ️</span>
+                <span className="mobile-link-text">About</span>
+              </NavLink>
+            </li>
+
+            <li className="mobile-nav-item">
+              <NavLink
+                to="/contactus"
+                className={({ isActive }) =>
+                  `mobile-nav-link ${isActive ? "active" : ""}`
+                }
+                onClick={toggleMobileMenu}
+              >
+                <span className="mobile-link-icon">📞</span>
+                <span className="mobile-link-text">Contact</span>
+              </NavLink>
+            </li>
+
+            <li className="mobile-nav-item">
+              <NavLink
+                to="/myprofile"
+                className={({ isActive }) =>
+                  `mobile-nav-link ${isActive ? "active" : ""}`
+                }
+                onClick={toggleMobileMenu}
+              >
+                <span className="mobile-link-icon">👤</span>
+                <span className="mobile-link-text">My Profile</span>
+              </NavLink>
+            </li>
+
+            <li className="mobile-nav-item">
+              <NavLink
+                to="/my-books"
+                className={({ isActive }) =>
+                  `mobile-nav-link ${isActive ? "active" : ""}`
+                }
+                onClick={toggleMobileMenu}
+              >
+                <span className="mobile-link-icon">📚</span>
+                <span className="mobile-link-text">My Library</span>
+                {Array.isArray(currentUser?.myBooks) &&
+                  currentUser.myBooks.length > 0 && (
+                    <span className="mobile-item-badge">
+                      {currentUser.myBooks.length}
+                    </span>
+                  )}
+              </NavLink>
+            </li>
+
+            <li className="mobile-nav-item">
+              {isAuth ? (
+                <button
+                  className="mobile-nav-link mobile-logout"
+                  onClick={() => {
+                    setMobileMenuOpen(false);
+                    onLogout();
+                  }}
+                >
+                  <span className="mobile-link-icon">🚪</span>
+                  <span className="mobile-link-text">Logout</span>
+                </button>
+              ) : (
+                <NavLink
+                  to="/login"
+                  className={({ isActive }) =>
+                    `mobile-nav-link ${isActive ? "active" : ""}`
+                  }
+                  onClick={toggleMobileMenu}
+                >
+                  <span className="mobile-link-icon">🔑</span>
+                  <span className="mobile-link-text">Sign In</span>
+                </NavLink>
+              )}
+            </li>
+          </ul>
+        </div>
+
+        {/* Overlay for mobile menu */}
+        <div
+          className={`mobile-menu-overlay ${mobileMenuOpen ? "show" : ""}`}
+          onClick={toggleMobileMenu}
+        />
       </nav>
       <style>{`
         /* =====================
@@ -238,13 +434,92 @@ function UserHeader({ onLogout }) {
           align-items: center;
           justify-content: space-between;
           height: 70px;
+          position: relative;
         }
 
         /* =====================
-           BRAND SECTION
+           MOBILE MENU TOGGLE - FIXED
+        ===================== */
+        .mobile-menu-toggle {
+          display: none !important; /* Force hide by default */
+          flex-direction: column;
+          justify-content: space-between;
+          width: 30px;
+          height: 24px;
+          background: none;
+          border: none;
+          cursor: pointer;
+          padding: 0;
+          z-index: 1001;
+          position: absolute;
+          left: 20px;
+          top: 50%;
+          transform: translateY(-50%);
+        }
+
+        @media (max-width: 992px) {
+          .mobile-menu-toggle {
+            display: flex !important; /* Force show on mobile */
+          }
+        }
+
+        .mobile-menu-toggle:hover {
+          opacity: 0.7;
+        }
+
+        .mobile-menu-toggle:focus {
+          outline: 2px solid var(--primary-color);
+          outline-offset: 2px;
+        }
+
+        .hamburger-line {
+          display: block;
+          width: 100%;
+          height: 3px;
+          background: var(--text-color);
+          border-radius: 2px;
+          transition: var(--transition);
+        }
+
+        .mobile-menu-toggle .hamburger-line:nth-child(1) {
+          transform-origin: 0% 0%;
+        }
+
+        .mobile-menu-toggle .hamburger-line:nth-child(2) {
+          transform-origin: 0% 50%;
+        }
+
+        .mobile-menu-toggle .hamburger-line:nth-child(3) {
+          transform-origin: 0% 100%;
+        }
+
+        .mobile-menu-toggle.open .hamburger-line:nth-child(1) {
+          transform: rotate(45deg) scaleX(1.1);
+        }
+
+        .mobile-menu-toggle.open .hamburger-line:nth-child(2) {
+          opacity: 0;
+          transform: scaleX(0);
+        }
+
+        .mobile-menu-toggle.open .hamburger-line:nth-child(3) {
+          transform: rotate(-45deg) scaleX(1.1);
+        }
+
+        /* =====================
+           BRAND SECTION - UPDATED FOR MOBILE
         ===================== */
         .header-brand {
           flex-shrink: 0;
+        }
+
+        @media (max-width: 992px) {
+          .header-brand {
+            position: absolute;
+            left: 50%;
+            transform: translateX(-50%);
+            margin-left: 0;
+          }
         }
 
         .brand-link {
@@ -279,8 +554,14 @@ function UserHeader({ onLogout }) {
           background-clip: text;
         }
 
+        @media (max-width: 768px) {
+          .brand-text {
+            font-size: 1.3rem;
+          }
+        }
+
         /* =====================
-           NAVIGATION MENU
+           DESKTOP NAVIGATION MENU
         ===================== */
         .header-nav {
           flex: 1;
@@ -349,6 +630,179 @@ function UserHeader({ onLogout }) {
 
         .link-text {
           font-size: 0.9rem;
+        }
+
+        /* =====================
+           MOBILE NAVIGATION MENU - FIXED
+        ===================== */
+        .mobile-nav-menu {
+          position: fixed;
+          top: 70px;
+          left: 0;
+          width: 100%;
+          height: calc(100vh - 70px);
+          background: var(--card-bg);
+          transform: translateX(-100%);
+          transition: transform 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+          z-index: 999;
+          overflow-y: auto;
+          box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+        }
+
+        @media (max-width: 768px) {
+          .mobile-nav-menu {
+            top: 60px;
+            height: calc(100vh - 60px);
+          }
+        }
+
+        .mobile-nav-menu.show {
+          transform: translateX(0);
+        }
+
+        .mobile-menu-overlay {
+          position: fixed;
+          top: 70px;
+          left: 0;
+          right: 0;
+          bottom: 0;
+          background: rgba(0, 0, 0, 0.5);
+          backdrop-filter: blur(4px);
+          z-index: 998;
+          opacity: 0;
+          visibility: hidden;
+          transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+
+        @media (max-width: 768px) {
+          .mobile-menu-overlay {
+            top: 60px;
+          }
+        }
+
+        .mobile-menu-overlay.show {
+          opacity: 1;
+          visibility: visible;
+        }
+
+        .mobile-nav-header {
+          padding: 1.5rem;
+          background: linear-gradient(135deg, var(--primary-light), var(--primary-color));
+          color: white;
+        }
+
+        .mobile-user-info {
+          display: flex;
+          align-items: center;
+          gap: 1rem;
+        }
+
+        .mobile-avatar {
+          position: relative;
+          width: 60px;
+          height: 60px;
+        }
+
+        .mobile-avatar img {
+          width: 100%;
+          height: 100%;
+          border-radius: 50%;
+          object-fit: cover;
+          border: 3px solid rgba(255, 255, 255, 0.3);
+        }
+
+        .mobile-online-indicator {
+          position: absolute;
+          bottom: 5px;
+          right: 5px;
+          width: 12px;
+          height: 12px;
+          background: var(--success-color);
+          border: 2px solid white;
+          border-radius: 50%;
+        }
+
+        .mobile-user-details {
+          flex: 1;
+        }
+
+        .mobile-user-name {
+          display: block;
+          font-size: 1.2rem;
+          font-weight: 700;
+          margin-bottom: 0.25rem;
+        }
+
+        .mobile-user-email {
+          display: block;
+          font-size: 0.9rem;
+          opacity: 0.9;
+        }
+
+        .mobile-nav-links {
+          list-style: none;
+          margin: 0;
+          padding: 1rem 0;
+        }
+
+        .mobile-nav-item {
+          border-bottom: 1px solid rgba(226, 232, 240, 0.5);
+        }
+
+        .mobile-nav-item:last-child {
+          border-bottom: none;
+        }
+
+        .mobile-nav-link {
+          display: flex;
+          align-items: center;
+          gap: 1rem;
+          padding: 1.25rem 1.5rem;
+          text-decoration: none;
+          color: var(--text-color);
+          font-size: 1rem;
+          font-weight: 500;
+          transition: var(--transition);
+          background: none;
+          border: none;
+          width: 100%;
+          cursor: pointer;
+          text-align: left;
+        }
+
+        .mobile-nav-link:hover,
+        .mobile-nav-link.active {
+          background: rgba(99, 102, 241, 0.05);
+          color: var(--primary-color);
+        }
+
+        .mobile-link-icon {
+          font-size: 1.3rem;
+          width: 24px;
+          text-align: center;
+        }
+
+        .mobile-link-text {
+          flex: 1;
+        }
+
+        .mobile-item-badge {
+          background: var(--primary-color);
+          color: white;
+          font-size: 0.8rem;
+          font-weight: 600;
+          padding: 0.2rem 0.6rem;
+          border-radius: 12px;
+          min-width: 28px;
+          text-align: center;
+        }
+
+        .mobile-logout {
+          color: var(--danger-color) !important;
+        }
+
+        .mobile-logout:hover {
+          background: rgba(239, 68, 68, 0.05) !important;
         }
 
         /* =====================
@@ -465,7 +919,7 @@ function UserHeader({ onLogout }) {
           transform: translateY(-10px);
           transition: var(--transition);
           z-index: 1000;
-          display: block !important; /* Override any inline styles */
+          display: block !important;
         }
 
         .dropdown-menu.show {
@@ -577,18 +1031,20 @@ function UserHeader({ onLogout }) {
           }
         }
 
+        @media (max-width: 992px) {
+          .header-container {
+            padding: 0 5rem 0 4rem; /* Add left padding for hamburger icon */
+          }
+        }
+
         @media (max-width: 768px) {
           .header-container {
-            padding: 0 1rem;
+            padding: 0 1rem 0 3rem; /* Adjust for smaller screens */
             height: 60px;
           }
           
           .brand-text {
             font-size: 1.3rem;
-          }
-          
-          .brand-icon {
-            font-size: 1.5rem;
           }
           
           .profile-avatar {
@@ -603,7 +1059,7 @@ function UserHeader({ onLogout }) {
 
         @media (max-width: 576px) {
           .header-container {
-            padding: 0 0.75rem;
+            padding: 0 0.75rem 0 2.5rem;
           }
           
           .brand-text {
@@ -614,6 +1070,35 @@ function UserHeader({ onLogout }) {
             right: -50%;
             width: 200px;
           }
+          
+          .mobile-avatar {
+            width: 50px;
+            height: 50px;
+          }
+          
+          .mobile-user-name {
+            font-size: 1.1rem;
+          }
+        }
+
+        @media (max-width: 480px) {
+          .brand-text {
+            font-size: 1.1rem;
+          }
+          
+          .mobile-nav-link {
+            padding: 1rem 1.25rem;
+          }
+          
+          .mobile-menu-toggle {
+            width: 25px;
+            height: 20px;
+            left: 15px;
+          }
+          
+          .hamburger-line {
+            height: 2.5px;
+          }
         }
 
         /* =====================
@@ -623,6 +1108,14 @@ function UserHeader({ onLogout }) {
           * {
             animation: none !important;
             transition: none !important;
+          }
+          
+          .mobile-nav-menu {
+            transition: none;
+          }
+          
+          .mobile-menu-overlay {
+            transition: none;
           }
         }
       `}</style>
