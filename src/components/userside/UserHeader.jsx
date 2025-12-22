@@ -92,7 +92,6 @@ function UserHeader({ onLogout }) {
                   end
                   onClick={() => setMobileMenuOpen(false)}
                 >
-                  <span className="link-icon">🏠</span>
                   <span className="link-text">Home</span>
                 </NavLink>
               </li>
@@ -103,7 +102,6 @@ function UserHeader({ onLogout }) {
                   className="nav-link"
                   onClick={() => setMobileMenuOpen(false)}
                 >
-                  <span className="link-icon">📖</span>
                   <span className="link-text">My Books</span>
                 </NavLink>
               </li>
@@ -114,7 +112,6 @@ function UserHeader({ onLogout }) {
                   className="nav-link"
                   onClick={() => setMobileMenuOpen(false)}
                 >
-                  <span className="link-icon">ℹ️</span>
                   <span className="link-text">About</span>
                 </NavLink>
               </li>
@@ -125,7 +122,6 @@ function UserHeader({ onLogout }) {
                   className="nav-link"
                   onClick={() => setMobileMenuOpen(false)}
                 >
-                  <span className="link-icon">📞</span>
                   <span className="link-text">Contact</span>
                 </NavLink>
               </li>
@@ -185,7 +181,6 @@ function UserHeader({ onLogout }) {
                         setMobileMenuOpen(false);
                       }}
                     >
-                      <span className="item-icon">👤</span>
                       <span className="item-text">My Profile</span>
                     </NavLink>
 
@@ -197,7 +192,6 @@ function UserHeader({ onLogout }) {
                         setMobileMenuOpen(false);
                       }}
                     >
-                      <span className="item-icon">📚</span>
                       <span className="item-text">My Library</span>
                       {Array.isArray(currentUser.myBooks) &&
                         currentUser.myBooks.length > 0 && (
@@ -217,7 +211,6 @@ function UserHeader({ onLogout }) {
                         onLogout();
                       }}
                     >
-                      <span className="item-icon">🚪</span>
                       <span className="item-text">Logout</span>
                     </button>
                   </>
@@ -230,7 +223,6 @@ function UserHeader({ onLogout }) {
                       setMobileMenuOpen(false);
                     }}
                   >
-                    <span className="item-icon">🔑</span>
                     <span className="item-text">Sign In</span>
                   </NavLink>
                 )}
@@ -269,7 +261,6 @@ function UserHeader({ onLogout }) {
                 end
                 onClick={toggleMobileMenu}
               >
-                <span className="mobile-link-icon">🏠</span>
                 <span className="mobile-link-text">Home</span>
               </NavLink>
             </li>
@@ -282,7 +273,6 @@ function UserHeader({ onLogout }) {
                 }
                 onClick={toggleMobileMenu}
               >
-                <span className="mobile-link-icon">📖</span>
                 <span className="mobile-link-text">My Books</span>
               </NavLink>
             </li>
@@ -295,7 +285,6 @@ function UserHeader({ onLogout }) {
                 }
                 onClick={toggleMobileMenu}
               >
-                <span className="mobile-link-icon">ℹ️</span>
                 <span className="mobile-link-text">About</span>
               </NavLink>
             </li>
@@ -308,7 +297,6 @@ function UserHeader({ onLogout }) {
                 }
                 onClick={toggleMobileMenu}
               >
-                <span className="mobile-link-icon">📞</span>
                 <span className="mobile-link-text">Contact</span>
               </NavLink>
             </li>
@@ -321,7 +309,6 @@ function UserHeader({ onLogout }) {
                 }
                 onClick={toggleMobileMenu}
               >
-                <span className="mobile-link-icon">👤</span>
                 <span className="mobile-link-text">My Profile</span>
               </NavLink>
             </li>
@@ -334,7 +321,6 @@ function UserHeader({ onLogout }) {
                 }
                 onClick={toggleMobileMenu}
               >
-                <span className="mobile-link-icon">📚</span>
                 <span className="mobile-link-text">My Library</span>
                 {Array.isArray(currentUser?.myBooks) &&
                   currentUser.myBooks.length > 0 && (
@@ -354,7 +340,6 @@ function UserHeader({ onLogout }) {
                     onLogout();
                   }}
                 >
-                  <span className="mobile-link-icon">🚪</span>
                   <span className="mobile-link-text">Logout</span>
                 </button>
               ) : (
@@ -365,7 +350,6 @@ function UserHeader({ onLogout }) {
                   }
                   onClick={toggleMobileMenu}
                 >
-                  <span className="mobile-link-icon">🔑</span>
                   <span className="mobile-link-text">Sign In</span>
                 </NavLink>
               )}

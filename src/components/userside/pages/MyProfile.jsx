@@ -476,14 +476,14 @@ function MyProfile() {
         }
 
         .btn-save {
-          background: #cdef0fff;
+          background: #c4e700dc;
           color: white;
         }
 
         .btn-save:hover {
           transform: translateY(-2px);
           box-shadow: 0 10px 20px rgba(16, 185, 129, 0.2);
-          background: #cdef0fff;
+          background: #cde304ff;
         }
 
         .btn-cancel {

@@ -46,10 +46,7 @@ function AboutUs({ handleUserLogout }) {
         <div className="about-content-wrapper">
           <div className="about-main-content">
             <div className="content-header">
-              <h2 className="content-title">
-                <span className="title-icon">📚</span>
-                Our Mission & Vision
-              </h2>
+              <h2 className="content-title">Our Mission & Vision</h2>
               <p className="content-intro">
                 Empowering readers with seamless access to knowledge through
                 innovative digital solutions
@@ -58,7 +55,6 @@ function AboutUs({ handleUserLogout }) {
 
             <div className="about-grid">
               <div className="about-card">
-                <div className="card-icon">🎯</div>
                 <h3 className="card-title">Our Mission</h3>
                 <p className="card-text">
                   To create an intuitive digital ecosystem that simplifies
@@ -69,7 +65,6 @@ function AboutUs({ handleUserLogout }) {
               </div>
 
               <div className="about-card">
-                <div className="card-icon">👁️</div>
                 <h3 className="card-title">Our Vision</h3>
                 <p className="card-text">
                   To become the leading digital library platform that transforms
@@ -80,7 +75,6 @@ function AboutUs({ handleUserLogout }) {
               </div>
 
               <div className="about-card">
-                <div className="card-icon">💡</div>
                 <h3 className="card-title">Innovation</h3>
                 <p className="card-text">
                   Leveraging cutting-edge technology to create smart features
@@ -119,50 +113,6 @@ function AboutUs({ handleUserLogout }) {
                   for everyone.
                 </p>
               </div>
-
-              <div className="features-grid">
-                <div className="feature-item">
-                  <div className="feature-icon">⚡</div>
-                  <h4 className="feature-title">Fast & Efficient</h4>
-                  <p className="feature-text">
-                    Instant book borrowing and returns
-                  </p>
-                </div>
-                <div className="feature-item">
-                  <div className="feature-icon">🔒</div>
-                  <h4 className="feature-title">Secure Access</h4>
-                  <p className="feature-text">
-                    Protected user accounts and data
-                  </p>
-                </div>
-                <div className="feature-item">
-                  <div className="feature-icon">📱</div>
-                  <h4 className="feature-title">Mobile Friendly</h4>
-                  <p className="feature-text">Access your library anywhere</p>
-                </div>
-                <div className="feature-item">
-                  <div className="feature-icon">📊</div>
-                  <h4 className="feature-title">Smart Analytics</h4>
-                  <p className="feature-text">
-                    Track reading habits and preferences
-                  </p>
-                </div>
-              </div>
-            </div>
-
-            <div className="about-cta">
-              <h3 className="cta-title">Ready to explore our collection?</h3>
-              <p className="cta-text">
-                Join thousands of readers who have discovered the joy of digital
-                reading
-              </p>
-              <button
-                className="btn-cta"
-                onClick={() => (window.location.href = "/")}
-              >
-                <span className="cta-icon">🔍</span>
-                Start Exploring Now
-              </button>
             </div>
           </div>
         </div>

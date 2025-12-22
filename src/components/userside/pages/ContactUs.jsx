@@ -20,15 +20,12 @@ function ContactUs({ handleUserLogout }) {
               </p>
               <div className="hero-features">
                 <div className="feature">
-                  <span className="feature-icon">📞</span>
                   <span className="feature-text">24/7 Support</span>
                 </div>
                 <div className="feature">
-                  <span className="feature-icon">⏱️</span>
                   <span className="feature-text">Quick Response</span>
                 </div>
                 <div className="feature">
-                  <span className="feature-icon">💬</span>
                   <span className="feature-text">Live Chat Available</span>
                 </div>
               </div>
@@ -40,24 +37,19 @@ function ContactUs({ handleUserLogout }) {
       {/* Contact Content */}
       <div className="contact-container">
         <div className="contact-header">
-          <h2 className="contact-main-title">
-            <span className="title-icon">📬</span>
-            Contact Us
-          </h2>
+          <h2 className="contact-main-title">Contact Us</h2>
         </div>
 
         <div className="contact-grid">
           {/* Contact Information Card */}
           <div className="contact-info-card">
             <div className="card-header">
-              <div className="card-icon">🏛️</div>
               <h3 className="card-title">Library Information</h3>
               <p className="card-subtitle">Visit us or get in touch</p>
             </div>
 
             <div className="contact-details">
               <div className="detail-item">
-                <div className="detail-icon">📍</div>
                 <div className="detail-content">
                   <h4 className="detail-title">Address</h4>
                   <p className="detail-text">
@@ -69,7 +61,6 @@ function ContactUs({ handleUserLogout }) {
               </div>
 
               <div className="detail-item">
-                <div className="detail-icon">📧</div>
                 <div className="detail-content">
                   <h4 className="detail-title">Email</h4>
                   <p className="detail-text">
@@ -84,7 +75,6 @@ function ContactUs({ handleUserLogout }) {
               </div>
 
               <div className="detail-item">
-                <div className="detail-icon">📱</div>
                 <div className="detail-content">
                   <h4 className="detail-title">Phone</h4>
                   <p className="detail-text">
@@ -96,7 +86,6 @@ function ContactUs({ handleUserLogout }) {
               </div>
 
               <div className="detail-item">
-                <div className="detail-icon">🕒</div>
                 <div className="detail-content">
                   <h4 className="detail-title">Working Hours</h4>
                   <p className="detail-text">
@@ -107,33 +96,12 @@ function ContactUs({ handleUserLogout }) {
                 </div>
               </div>
             </div>
-
-            <div className="social-links">
-              <div className="social-title">Follow Us</div>
-              <div className="social-icons">
-                <a href="#" className="social-icon">
-                  📘
-                </a>
-                <a href="#" className="social-icon">
-                  🐦
-                </a>
-                <a href="#" className="social-icon">
-                  📸
-                </a>
-                <a href="#" className="social-icon">
-                  💼
-                </a>
-              </div>
-            </div>
           </div>
 
           {/* Contact Form Card */}
           <div className="contact-form-card">
             <div className="form-header">
-              <h3 className="form-title">
-                <span className="form-icon">✉️</span>
-                Send us a Message
-              </h3>
+              <h3 className="form-title">Send us a Message</h3>
               <p className="form-subtitle">
                 Fill out the form below and we'll get back to you within 24
                 hours
@@ -142,10 +110,7 @@ function ContactUs({ handleUserLogout }) {
 
             <form className="contact-form">
               <div className="form-group">
-                <label className="form-label">
-                  <span className="label-icon">👤</span>
-                  Full Name
-                </label>
+                <label className="form-label">Full Name :</label>
                 <div className="input-container">
                   <input
                     type="text"
@@ -153,15 +118,11 @@ function ContactUs({ handleUserLogout }) {
                     placeholder="Enter your full name"
                     required
                   />
-                  <div className="input-icon">✍️</div>
                 </div>
               </div>
 
               <div className="form-group">
-                <label className="form-label">
-                  <span className="label-icon">📧</span>
-                  Email Address
-                </label>
+                <label className="form-label">Email Address :</label>
                 <div className="input-container">
                   <input
                     type="email"
@@ -169,15 +130,11 @@ function ContactUs({ handleUserLogout }) {
                     placeholder="Enter your email address"
                     required
                   />
-                  <div className="input-icon">@</div>
                 </div>
               </div>
 
               <div className="form-group">
-                <label className="form-label">
-                  <span className="label-icon">📝</span>
-                  Subject
-                </label>
+                <label className="form-label">Subject :</label>
                 <div className="input-container">
                   <input
                     type="text"
@@ -185,15 +142,11 @@ function ContactUs({ handleUserLogout }) {
                     placeholder="What is this regarding?"
                     required
                   />
-                  <div className="input-icon">📌</div>
                 </div>
               </div>
 
               <div className="form-group">
-                <label className="form-label">
-                  <span className="label-icon">💭</span>
-                  Your Message
-                </label>
+                <label className="form-label">Your Message :</label>
                 <div className="textarea-container">
                   <textarea
                     className="form-textarea"
@@ -201,18 +154,13 @@ function ContactUs({ handleUserLogout }) {
                     placeholder="Write your message here..."
                     required
                   ></textarea>
-                  <div className="textarea-icon">✏️</div>
                 </div>
               </div>
 
               <div className="form-footer">
                 <button type="submit" className="submit-btn">
-                  <span className="btn-icon">🚀</span>
                   Send Message
                 </button>
-                <p className="form-note">
-                  By submitting, you agree to our terms and privacy policy
-                </p>
               </div>
             </form>
           </div>

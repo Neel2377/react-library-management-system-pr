@@ -162,10 +162,7 @@ function Home() {
       {/* Latest Books Section */}
       <div className="container my-5">
         <div className="section-header">
-          <h3 className="section-title">
-            <span className="section-icon">📚</span>
-            Latest Books
-          </h3>
+          <h3 className="section-title">Latest Books</h3>
           <div className="section-badge">
             <span className="badge-count">{latestBooks.length}</span> new
             arrivals
@@ -174,14 +171,11 @@ function Home() {
 
         <div className="row row-cols-1 row-cols-md-4 g-4">
           {latestBooks.length ? (
-            latestBooks.map((book, index) => (
+            latestBooks.map((book) => (
               <div className="col-md-3" key={book.id}>
                 <div className="book-card h-100 position-relative">
                   <span className="book-badge">
                     <span className="badge-new">NEW</span>
-                    {index === 0 && (
-                      <span className="badge-trending">🔥 Trending</span>
-                    )}
                   </span>
 
                   <div className="book-image-wrapper">
@@ -244,7 +238,7 @@ function Home() {
             ))
           ) : (
             <div className="empty-state">
-              <div className="empty-icon">📚</div>
+              <div className="empty-icon"></div>
               <p className="empty-text">No books available</p>
             </div>
           )}
@@ -256,7 +250,6 @@ function Home() {
               className="btn btn-load-more"
               onClick={() => setVisibleLatestCount((prev) => prev + 4)}
             >
-              <span className="load-more-icon">⬇️</span>
               Load More Books
             </button>
           </div>
@@ -267,17 +260,11 @@ function Home() {
       <div className="container my-5">
         <div className="section-header">
           <div className="section-title-wrapper">
-            <h3 className="section-title">
-              <span className="section-icon">📂</span>
-              Browse Categories
-            </h3>
+            <h3 className="section-title">Browse Categories</h3>
             <p className="section-subtitle">Browse Categories with All Books</p>
           </div>
           <div className="category-filter-wrapper">
-            <div className="filter-label">
-              <span className="filter-icon">🔍</span>
-              Filter:
-            </div>
+            <div className="filter-label">Filter:</div>
             <select
               className="form-select category-select"
               value={selectedCategory}
@@ -349,7 +336,6 @@ function Home() {
             ))
           ) : (
             <div className="empty-state">
-              <div className="empty-icon">🔍</div>
               <p className="empty-text">No books found for this category</p>
             </div>
           )}

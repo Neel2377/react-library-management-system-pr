@@ -47,48 +47,36 @@ function Dashboard({ books = [], users = [], setUsers }) {
         value: totalBooks,
         bg: "primary",
         icon: "📚",
-        trend: "↗️",
-        change: "+12%",
       },
       {
         label: "Categories",
         value: categories,
         bg: "success",
         icon: "🏷️",
-        trend: "→",
-        change: "0%",
       },
       {
         label: "Borrowed",
         value: borrowed,
         bg: "danger",
         icon: "📖",
-        trend: "↗️",
-        change: "+8%",
       },
       {
         label: "Available",
         value: available,
         bg: "warning",
         icon: "✅",
-        trend: "↘️",
-        change: "-3%",
       },
       {
         label: "Total Stock",
         value: totalStock,
         bg: "info",
         icon: "📦",
-        trend: "↗️",
-        change: "+5%",
       },
       {
         label: "Users",
         value: totalUsers,
         bg: "dark",
         icon: "👥",
-        trend: "↗️",
-        change: "+15%",
       },
     ];
   }, [books, users]);
@@ -126,10 +114,7 @@ function Dashboard({ books = [], users = [], setUsers }) {
         {/* Dashboard Header */}
         <div className="dashboard-header">
           <div className="header-content">
-            <h1 className="dashboard-title">
-              <span className="title-icon">📊</span>
-              Dashboard Overview
-            </h1>
+            <h1 className="dashboard-title">Dashboard Overview</h1>
           </div>
         </div>
 
@@ -139,10 +124,6 @@ function Dashboard({ books = [], users = [], setUsers }) {
             <div className="stat-card" key={s.label}>
               <div className={`stat-header stat-${s.bg}`}>
                 <div className="stat-icon">{s.icon}</div>
-                <div className="stat-trend">
-                  <span className="trend-icon">{s.trend}</span>
-                  <span className="trend-text">{s.change}</span>
-                </div>
               </div>
               <div className="stat-body">
                 <div className="stat-value">{s.value}</div>
@@ -166,10 +147,7 @@ function Dashboard({ books = [], users = [], setUsers }) {
           <div className="content-card books-card">
             <div className="card-header">
               <div className="header-left">
-                <h3 className="card-title">
-                  <span className="title-icon">📖</span>
-                  Recent Books
-                </h3>
+                <h3 className="card-title">Recent Books</h3>
                 <div className="card-badge">{books.length} total</div>
               </div>
             </div>
@@ -239,7 +217,6 @@ function Dashboard({ books = [], users = [], setUsers }) {
                   ) : (
                     <tr className="empty-row">
                       <td colSpan="6" className="empty-state">
-                        <div className="empty-icon">📚</div>
                         <div className="empty-text">No books available</div>
                       </td>
                     </tr>
@@ -299,10 +276,7 @@ function Dashboard({ books = [], users = [], setUsers }) {
         <div className="content-card users-card">
           <div className="card-header">
             <div className="header-left">
-              <h3 className="card-title">
-                <span className="title-icon">👥</span>
-                Recent Users
-              </h3>
+              <h3 className="card-title">Recent Users</h3>
               <div className="card-badge">{users.length} total</div>
             </div>
             <div className="header-right"></div>
@@ -338,10 +312,7 @@ function Dashboard({ books = [], users = [], setUsers }) {
                         </div>
                       </td>
                       <td className="table-email">
-                        <div className="email-info">
-                          <span className="email-icon">📧</span>
-                          {u.email}
-                        </div>
+                        <div className="email-info">{u.email}</div>
                       </td>
                       <td className="table-role">
                         <div
@@ -358,7 +329,9 @@ function Dashboard({ books = [], users = [], setUsers }) {
                             className="action-btn delete-btn"
                             onClick={() => handleDeleteUser(u.id)}
                           >
-                            <span className="action-icon">🗑️</span>
+                            <button className="action-icon" aria-label="Delete">
+                              <i className="fas fa-trash"></i>
+                            </button>
                           </button>
                         </div>
                       </td>
@@ -367,7 +340,6 @@ function Dashboard({ books = [], users = [], setUsers }) {
                 ) : (
                   <tr className="empty-row">
                     <td colSpan="5" className="empty-state">
-                      <div className="empty-icon">👤</div>
                       <div className="empty-text">No users found</div>
                     </td>
                   </tr>
@@ -380,8 +352,7 @@ function Dashboard({ books = [], users = [], setUsers }) {
         {/* Quick Stats */}
         <div className="quick-stats">
           <div className="stat-item">
-            <div className="stat-icon">⚡</div>
-            <div className="stat-content">
+            <div className="stat-content mx-5">
               <div className="stat-value">
                 {books.filter((b) => Number(b.count) === 0).length}
               </div>
@@ -389,8 +360,7 @@ function Dashboard({ books = [], users = [], setUsers }) {
             </div>
           </div>
           <div className="stat-item">
-            <div className="stat-icon">📈</div>
-            <div className="stat-content">
+            <div className="stat-content mx-5">
               <div className="stat-value">
                 {users.filter((u) => u.myBooks?.length > 0).length}
               </div>
@@ -398,8 +368,7 @@ function Dashboard({ books = [], users = [], setUsers }) {
             </div>
           </div>
           <div className="stat-item">
-            <div className="stat-icon">🎯</div>
-            <div className="stat-content">
+            <div className="stat-content mx-5">
               <div className="stat-value">
                 {Math.round(
                   (books.filter((b) => Number(b.count) > 0).length /
@@ -531,6 +500,14 @@ function Dashboard({ books = [], users = [], setUsers }) {
           gap: 0.5rem;
           transition: var(--transition);
         }
+
+        .action-icon {
+  background: none;
+  border: none;
+  cursor: pointer;
+  color: #dc3545;
+  font-size: 16px;
+}
 
         .refresh-btn:hover {
           transform: translateY(-2px);

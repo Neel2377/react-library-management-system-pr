@@ -80,10 +80,7 @@ function AdminLogin() {
             {/* Admin Header */}
             <div className="admin-header">
               <div className="admin-title-section">
-                <h1 className="admin-title">
-                  <span className="title-icon">⚡</span>
-                  Admin Access
-                </h1>
+                <h1 className="admin-title">Admin Access</h1>
                 <p className="admin-subtitle">
                   Secure admin dashboard for library management
                 </p>
@@ -98,11 +95,7 @@ function AdminLogin() {
             >
               {/* Email Field */}
               <div className="form-group">
-                <label className="form-label">
-                  <span className="label-icon">👑</span>
-                  Admin Email
-                  <span className="label-required">*</span>
-                </label>
+                <label className="form-label">Admin Email :</label>
                 <div className="input-container">
                   <input
                     id="email"
@@ -114,23 +107,15 @@ function AdminLogin() {
                     placeholder="admin@gmail.com"
                     disabled={isLoading}
                   />
-                  <div className="input-icon">@</div>
                 </div>
                 {errors.email && (
-                  <div className="error-message">
-                    <span className="error-icon">🚫</span>
-                    {errors.email}
-                  </div>
+                  <div className="error-message">{errors.email}</div>
                 )}
               </div>
 
               {/* Password Field */}
               <div className="form-group">
-                <label className="form-label">
-                  <span className="label-icon">🔑</span>
-                  Admin Password
-                  <span className="label-required">*</span>
-                </label>
+                <label className="form-label">Admin Password :</label>
                 <div className="input-container">
                   <input
                     id="password"
@@ -142,13 +127,9 @@ function AdminLogin() {
                     placeholder="Enter admin password"
                     disabled={isLoading}
                   />
-                  <div className="input-icon">⚡</div>
                 </div>
                 {errors.password && (
-                  <div className="error-message">
-                    <span className="error-icon">🚫</span>
-                    {errors.password}
-                  </div>
+                  <div className="error-message">{errors.password}</div>
                 )}
               </div>
 
@@ -164,14 +145,10 @@ function AdminLogin() {
                     Authenticating...
                   </>
                 ) : (
-                  <>
-                    <span className="btn-icon">🚪</span>
-                    Access Admin Dashboard
-                  </>
+                  <>Access Admin Dashboard</>
                 )}
               </button>
               <div className="password-note">
-                <span className="note-icon">⚠️</span>
                 Default: admin@gmail.com / admin123
               </div>
               {/* Back to User Login */}
@@ -199,12 +176,12 @@ function AdminLogin() {
           --admin-danger: #dc2626;
           --admin-warning: #f59e0b;
           --admin-success: #10b981;
-          --admin-bg: #0f172a;
+          --admin-bg: #f1f5f9;
           --admin-card-bg: #1e293b;
-          --admin-text: #f8fafc;
-          --admin-text-light: #94a3b8;
+          --admin-text: #f1f5f9;
+          --admin-text-light: #f1f5f9;
           --admin-border: #334155;
-          --admin-shadow: 0 20px 40px rgba(0, 0, 0, 0.3);
+          --admin-shadow: 0 20px 40px rgba(70, 16, 16, 0.3);
           --admin-glow: 0 0 20px rgba(14, 165, 233, 0.3);
           --radius: 16px;
           --transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
@@ -221,7 +198,7 @@ function AdminLogin() {
         ===================== */
         .admin-login-page {
           min-height: 100vh;
-          background: linear-gradient(135deg, var(--admin-bg), #020617);
+          background: linear-gradient(135deg, var(--admin-bg), #f1f5f9);
           display: flex;
           align-items: center;
           justify-content: center;

@@ -22,19 +22,19 @@ function UserFooter() {
               <div className="social-title">Follow Us</div>
               <div className="social-icons">
                 <NavLink to="#" className="social-link" aria-label="Facebook">
-                  <span className="social-icon">📘</span>
+                  <i className="fab fa-facebook-f social-icon"></i>
                 </NavLink>
 
                 <NavLink to="#" className="social-link" aria-label="Twitter">
-                  <span className="social-icon">🐦</span>
+                  <i className="fab fa-twitter social-icon"></i>
                 </NavLink>
 
                 <NavLink to="#" className="social-link" aria-label="Instagram">
-                  <span className="social-icon">📸</span>
+                  <i className="fab fa-instagram social-icon"></i>
                 </NavLink>
 
                 <NavLink to="#" className="social-link" aria-label="LinkedIn">
-                  <span className="social-icon">💼</span>
+                  <i className="fab fa-linkedin social-icon"></i>
                 </NavLink>
               </div>
             </div>
@@ -43,7 +43,6 @@ function UserFooter() {
           {/* Center Section */}
           <div className="footer-center">
             <div className="links-header">
-              <div className="links-icon">🔗</div>
               <h4 className="links-title">Quick Links</h4>
             </div>
             <ul className="links-list">
@@ -80,7 +79,6 @@ function UserFooter() {
           {/* Right Section */}
           <div className="footer-right">
             <div className="contact-header">
-              <div className="contact-icon">📞</div>
               <h4 className="contact-title">Contact Info</h4>
             </div>
 
@@ -91,28 +89,20 @@ function UserFooter() {
                   to="mailto:library@example.com"
                   className="contact-value"
                 >
-                  <span className="value-icon">📧</span>
                   library@example.com
                 </NavLink>
               </div>
 
               <div className="contact-item">
                 <div className="contact-type">Phone</div>
-                <NavLink
-                  to="tel:+919876543210"
-                  className="contact-value"
-                >
-                  <span className="value-icon">📱</span>
+                <NavLink to="tel:+919876543210" className="contact-value">
                   +91 98765 43210
                 </NavLink>
               </div>
 
               <div className="contact-item">
                 <div className="contact-type">Hours</div>
-                <div className="contact-value">
-                  <span className="value-icon">🕒</span>
-                  Mon–Fri: 9AM–6PM
-                </div>
+                <div className="contact-value">Mon–Fri: 9AM–6PM</div>
               </div>
             </div>
           </div>
@@ -125,14 +115,8 @@ function UserFooter() {
               © 2025 Digital Library Hub. All rights reserved.
             </div>
             <div className="extra-info">
-              <span className="extra-item">
-                <span className="extra-icon">🔒</span>
-                Privacy Policy
-              </span>
-              <span className="extra-item">
-                <span className="extra-icon">📋</span>
-                Terms of Service
-              </span>
+              <span className="extra-item">Privacy Policy</span>
+              <span className="extra-item">Terms of Service</span>
             </div>
           </div>
         </div>
@@ -190,7 +174,7 @@ function UserFooter() {
 
         .brand-icon {
           font-size: 2.5rem;
-          background: linear-gradient(135deg, #6366f1, #8b5cf6);
+          background: linear-gradient(135deg, #ffffffff, #ffffffff);
           -webkit-background-clip: text;
           -webkit-text-fill-color: transparent;
           background-clip: text;

@@ -81,7 +81,6 @@ function Login() {
             {/* Header Section */}
             <div className="login-header">
               <div className="logo-container">
-                <span className="logo-icon">📚</span>
                 <h1 className="logo-text">Digital Library</h1>
               </div>
               <div className="welcome-text">
@@ -96,10 +95,7 @@ function Login() {
             <form onSubmit={handleSubmit} noValidate className="login-form">
               {/* Email Field */}
               <div className="form-group">
-                <label className="form-label">
-                  <span className="label-icon">📧</span>
-                  Email Address
-                </label>
+                <label className="form-label">Email Address :</label>
                 <div className="input-container">
                   <input
                     type="email"
@@ -110,23 +106,16 @@ function Login() {
                     placeholder="Enter your email"
                     autoComplete="email"
                   />
-                  <div className="input-icon">@</div>
                 </div>
                 {errors.email && (
-                  <div className="error-message">
-                    <span className="error-icon">⚠️</span>
-                    {errors.email}
-                  </div>
+                  <div className="error-message">{errors.email}</div>
                 )}
               </div>
 
               {/* Password Field */}
               <div className="form-group">
                 <div className="label-row">
-                  <label className="form-label">
-                    <span className="label-icon">🔒</span>
-                    Password
-                  </label>
+                  <label className="form-label">Password :</label>
                 </div>
                 <div className="input-container">
                   <input
@@ -138,19 +127,14 @@ function Login() {
                     placeholder="Enter your password"
                     autoComplete="current-password"
                   />
-                  <div className="input-icon">🔑</div>
                 </div>
                 {errors.password && (
-                  <div className="error-message">
-                    <span className="error-icon">⚠️</span>
-                    {errors.password}
-                  </div>
+                  <div className="error-message">{errors.password}</div>
                 )}
               </div>
 
               {/* Submit Button */}
               <button type="submit" className="submit-btn">
-                <span className="btn-icon">🚀</span>
                 Log In
               </button>
 
@@ -159,14 +143,12 @@ function Login() {
                 <p className="signup-text">
                   Don't have an account?
                   <Link to="/signup" className="signup-link">
-                    <span className="signup-icon">✨</span>
                     Create Account
                   </Link>
                 </p>
                 <p className="admin-text">
                   Are you an admin?
                   <Link to="/admin-login" className="admin-link">
-                    <span className="admin-icon">👨‍💼</span>
                     Admin Login
                   </Link>
                 </p>

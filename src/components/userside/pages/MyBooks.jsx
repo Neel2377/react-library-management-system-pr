@@ -99,10 +99,7 @@ function MyBooks({ handleUserLogout }) {
         <div className="mybooks-header">
           <div className="header-content">
             <div className="title-section">
-              <h1 className="page-title">
-                <span className="title-icon">📚</span>
-                My Library
-              </h1>
+              <h1 className="page-title">My Library</h1>
               <p className="page-subtitle">
                 Manage your borrowed books collection
               </p>
@@ -110,14 +107,12 @@ function MyBooks({ handleUserLogout }) {
 
             <div className="header-stats">
               <div className="stat-card">
-                <div className="stat-icon">📖</div>
                 <div className="stat-content">
                   <div className="stat-number">{groupedBooks.length}</div>
                   <div className="stat-label">Unique Books</div>
                 </div>
               </div>
               <div className="stat-card">
-                <div className="stat-icon">📚</div>
                 <div className="stat-content">
                   <div className="stat-number">
                     {groupedBooks.reduce((sum, book) => sum + book.qty, 0)}
@@ -131,7 +126,6 @@ function MyBooks({ handleUserLogout }) {
           {groupedBooks.length > 0 && (
             <div className="header-actions">
               <button className="btn btn-remove-all" onClick={handleRemoveAll}>
-                <span className="btn-icon">🗑️</span>
                 Clear All Books
               </button>
             </div>
@@ -147,7 +141,6 @@ function MyBooks({ handleUserLogout }) {
                     <div className="book-card-inner">
                       <div className="book-image-container">
                         <div className="book-quantity-badge">
-                          <span className="quantity-icon">📦</span>
                           <span className="quantity-text">x{book.qty}</span>
                         </div>
                         <img
@@ -161,7 +154,6 @@ function MyBooks({ handleUserLogout }) {
                               className="btn-return-book"
                               onClick={() => handleRemoveOne(book.id)}
                             >
-                              <span className="return-icon">↩️</span>
                               Return Copy
                             </button>
                           </div>
@@ -189,7 +181,6 @@ function MyBooks({ handleUserLogout }) {
                             className="btn btn-remove-one"
                             onClick={() => handleRemoveOne(book.id)}
                           >
-                            <span className="action-icon">📤</span>
                             Return Copy
                           </button>
                         </div>
@@ -202,7 +193,6 @@ function MyBooks({ handleUserLogout }) {
           ) : (
             <div className="empty-library">
               <div className="empty-content">
-                <div className="empty-icon">📚</div>
                 <h3 className="empty-title">Your Library is Empty</h3>
                 <p className="empty-description">
                   You haven't borrowed any books yet. Start exploring our
@@ -212,7 +202,6 @@ function MyBooks({ handleUserLogout }) {
                   className="btn btn-explore-books"
                   onClick={() => navigate("/")}
                 >
-                  <span className="explore-icon">🔍</span>
                   Explore Books
                 </button>
               </div>

@@ -58,7 +58,6 @@ function AddBook({ handleChange, handleSubmit, book }) {
           <div className="addbook-header">
             <div className="header-content">
               <h1 className="page-title">
-                <span className="title-icon">📚</span>
                 {isEdit ? "Edit Book" : "Add New Book"}
               </h1>
             </div>
@@ -68,7 +67,6 @@ function AddBook({ handleChange, handleSubmit, book }) {
           <div className="addbook-card">
             <div className="card-header">
               <div className="card-title">
-                <span className="card-icon">{isEdit ? "✏️" : "➕"}</span>
                 {isEdit ? "Edit Book Details" : "Book Information"}
               </div>
             </div>
@@ -77,11 +75,9 @@ function AddBook({ handleChange, handleSubmit, book }) {
               {/* Book Name Field */}
               <div className="form-group">
                 <div className="form-label-row">
-                  <label className="form-label">Book Name</label>
-                  <span className="form-required">* Required</span>
+                  <label className="form-label">Book Name :</label>
                 </div>
                 <div className="input-container">
-                  <span className="input-icon">📖</span>
                   <input
                     type="text"
                     name="name"
@@ -92,10 +88,7 @@ function AddBook({ handleChange, handleSubmit, book }) {
                     autoComplete="off"
                   />
                   {errors.name && (
-                    <div className="error-message">
-                      <span className="error-icon">⚠️</span>
-                      {errors.name}
-                    </div>
+                    <div className="error-message">{errors.name}</div>
                   )}
                 </div>
               </div>
@@ -103,11 +96,9 @@ function AddBook({ handleChange, handleSubmit, book }) {
               {/* Category Field */}
               <div className="form-group">
                 <div className="form-label-row">
-                  <label className="form-label">Book Category</label>
-                  <span className="form-required">* Required</span>
+                  <label className="form-label">Book Category :</label>
                 </div>
                 <div className="select-container">
-                  <span className="select-icon">🏷️</span>
                   <select
                     name="category"
                     value={book.category || ""}
@@ -128,21 +119,16 @@ function AddBook({ handleChange, handleSubmit, book }) {
                   <span className="select-arrow">▼</span>
                 </div>
                 {errors.category && (
-                  <div className="error-message">
-                    <span className="error-icon">⚠️</span>
-                    {errors.category}
-                  </div>
+                  <div className="error-message">{errors.category}</div>
                 )}
               </div>
 
               {/* Author Field */}
               <div className="form-group">
                 <div className="form-label-row">
-                  <label className="form-label">Book Author</label>
-                  <span className="form-required">* Required</span>
+                  <label className="form-label">Book Author :</label>
                 </div>
                 <div className="input-container">
-                  <span className="input-icon">✍️</span>
                   <input
                     type="text"
                     name="author"
@@ -155,10 +141,7 @@ function AddBook({ handleChange, handleSubmit, book }) {
                     autoComplete="off"
                   />
                   {errors.author && (
-                    <div className="error-message">
-                      <span className="error-icon">⚠️</span>
-                      {errors.author}
-                    </div>
+                    <div className="error-message">{errors.author}</div>
                   )}
                 </div>
               </div>
@@ -166,11 +149,9 @@ function AddBook({ handleChange, handleSubmit, book }) {
               {/* Stock Field */}
               <div className="form-group">
                 <div className="form-label-row">
-                  <label className="form-label">Book Stock</label>
-                  <span className="form-required">* Required</span>
+                  <label className="form-label">Book Stock :</label>
                 </div>
                 <div className="input-container">
-                  <span className="input-icon">📦</span>
                   <input
                     type="number"
                     name="count"
@@ -193,21 +174,16 @@ function AddBook({ handleChange, handleSubmit, book }) {
                   </div>
                 </div>
                 {errors.count && (
-                  <div className="error-message">
-                    <span className="error-icon">⚠️</span>
-                    {errors.count}
-                  </div>
+                  <div className="error-message">{errors.count}</div>
                 )}
               </div>
 
               {/* Image URL Field */}
               <div className="form-group">
                 <div className="form-label-row">
-                  <label className="form-label">Book Cover Image URL</label>
-                  <span className="form-required">* Required</span>
+                  <label className="form-label">Book Cover Image URL :</label>
                 </div>
                 <div className="input-container">
-                  <span className="input-icon">🖼️</span>
                   <input
                     type="url"
                     name="image"
@@ -218,10 +194,7 @@ function AddBook({ handleChange, handleSubmit, book }) {
                     autoComplete="off"
                   />
                   {errors.image && (
-                    <div className="error-message">
-                      <span className="error-icon">⚠️</span>
-                      {errors.image}
-                    </div>
+                    <div className="error-message">{errors.image}</div>
                   )}
                 </div>
                 {book.image && !errors.image && (
@@ -243,7 +216,6 @@ function AddBook({ handleChange, handleSubmit, book }) {
               {/* Submit Button */}
               <div className="form-actions">
                 <button type="submit" className="submit-btn">
-                  <span className="btn-icon">{isEdit ? "💾" : "➕"}</span>
                   <span className="btn-text">
                     {isEdit ? "Update Book" : "Add Book to Library"}
                   </span>

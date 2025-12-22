@@ -89,7 +89,6 @@ function Signup() {
             <div className="signup-header">
               <div className="header-content">
                 <div className="logo-section">
-                  <span className="logo-icon">✨</span>
                   <h1 className="logo-text">Join Our Library</h1>
                 </div>
                 <div className="welcome-section">
@@ -105,11 +104,7 @@ function Signup() {
             <form onSubmit={handleSubmit} noValidate className="signup-form">
               {/* Username Field */}
               <div className="form-group">
-                <label className="form-label">
-                  <span className="label-icon">👤</span>
-                  Username
-                  <span className="label-required">*</span>
-                </label>
+                <label className="form-label">Username :</label>
                 <div className="input-container">
                   <input
                     type="text"
@@ -120,23 +115,15 @@ function Signup() {
                     placeholder="Choose a username"
                     autoComplete="username"
                   />
-                  <div className="input-icon">✍️</div>
                 </div>
                 {errors.username && (
-                  <div className="error-message">
-                    <span className="error-icon">⚠️</span>
-                    {errors.username}
-                  </div>
+                  <div className="error-message">{errors.username}</div>
                 )}
               </div>
 
               {/* Email Field */}
               <div className="form-group">
-                <label className="form-label">
-                  <span className="label-icon">📧</span>
-                  Email Address
-                  <span className="label-required">*</span>
-                </label>
+                <label className="form-label">Email Address :</label>
                 <div className="input-container">
                   <input
                     type="email"
@@ -147,23 +134,15 @@ function Signup() {
                     placeholder="Enter your email"
                     autoComplete="email"
                   />
-                  <div className="input-icon">@</div>
                 </div>
                 {errors.email && (
-                  <div className="error-message">
-                    <span className="error-icon">⚠️</span>
-                    {errors.email}
-                  </div>
+                  <div className="error-message">{errors.email}</div>
                 )}
               </div>
 
               {/* Password Field */}
               <div className="form-group">
-                <label className="form-label">
-                  <span className="label-icon">🔒</span>
-                  Password
-                  <span className="label-required">*</span>
-                </label>
+                <label className="form-label">Password :</label>
                 <div className="input-container">
                   <input
                     type="password"
@@ -174,19 +153,14 @@ function Signup() {
                     placeholder="Create a strong password"
                     autoComplete="new-password"
                   />
-                  <div className="input-icon">🔑</div>
                 </div>
                 {errors.password && (
-                  <div className="error-message">
-                    <span className="error-icon">⚠️</span>
-                    {errors.password}
-                  </div>
+                  <div className="error-message">{errors.password}</div>
                 )}
               </div>
 
               {/* Submit Button */}
               <button type="submit" className="submit-btn">
-                <span className="btn-icon">🚀</span>
                 Create Account
               </button>
               {/* Login Link */}
@@ -194,7 +168,6 @@ function Signup() {
                 <p className="login-text">
                   Already have an account?
                   <Link to="/login" className="login-link">
-                    <span className="link-icon">👉</span>
                     Log In
                   </Link>
                 </p>
