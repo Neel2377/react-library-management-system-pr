@@ -16,7 +16,7 @@ A lightweight React-based library management system starter built with Vite and 
 - Email - admin@gmail.com
 - Password - admin123
 
-- When Userside & Adminside changes then sometime refresh the page & show updated changes show.
+- When use Userside or Adminside & any factionality run or changes then after  sometime refresh the page & updated changes show.
 
 ---
 
