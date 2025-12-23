@@ -73,7 +73,7 @@ function Signup() {
   return (
     <>
       <div className="signup-page">
-        {/* Background Effects */}
+        {}
         <div className="bg-effects">
           <div className="bg-circle circle-1"></div>
           <div className="bg-circle circle-2"></div>
@@ -81,11 +81,11 @@ function Signup() {
           <div className="bg-blur"></div>
         </div>
 
-        {/* Main Container */}
+        {}
         <div className="signup-container">
-          {/* Signup Card */}
+          {}
           <div className="signup-card">
-            {/* Header Section */}
+            {}
             <div className="signup-header">
               <div className="header-content">
                 <div className="logo-section">
@@ -100,9 +100,9 @@ function Signup() {
               </div>
             </div>
 
-            {/* Signup Form */}
+            {}
             <form onSubmit={handleSubmit} noValidate className="signup-form">
-              {/* Username Field */}
+              {}
               <div className="form-group">
                 <label className="form-label">Username :</label>
                 <div className="input-container">
@@ -121,7 +121,7 @@ function Signup() {
                 )}
               </div>
 
-              {/* Email Field */}
+              {}
               <div className="form-group">
                 <label className="form-label">Email Address :</label>
                 <div className="input-container">
@@ -140,7 +140,7 @@ function Signup() {
                 )}
               </div>
 
-              {/* Password Field */}
+              {}
               <div className="form-group">
                 <label className="form-label">Password :</label>
                 <div className="input-container">
@@ -159,11 +159,11 @@ function Signup() {
                 )}
               </div>
 
-              {/* Submit Button */}
+              {}
               <button type="submit" className="submit-btn">
                 Create Account
               </button>
-              {/* Login Link */}
+              {}
               <div className="login-section">
                 <p className="login-text">
                   Already have an account?
@@ -210,9 +210,9 @@ function Signup() {
         ===================== */
         .signup-page {
           min-height: 100vh;
-          background: linear-gradient(135deg, 
-            rgba(99, 102, 241, 0.05) 0%, 
-            rgba(139, 92, 246, 0.05) 50%, 
+          background: linear-gradient(135deg,
+            rgba(99, 102, 241, 0.05) 0%,
+            rgba(139, 92, 246, 0.05) 50%,
             rgba(236, 72, 153, 0.05) 100%);
           display: flex;
           align-items: center;
@@ -704,31 +704,31 @@ function Signup() {
           .signup-page {
             padding: 1rem;
           }
-          
+
           .signup-container {
             max-width: 100%;
           }
-          
+
           .signup-header {
             padding: 2rem 1.5rem 1rem;
           }
-          
+
           .signup-form {
             padding: 2rem 1.5rem;
           }
-          
+
           .logo-text {
             font-size: 1.6rem;
           }
-          
+
           .welcome-title {
             font-size: 1.6rem;
           }
-          
+
           .social-signup {
             flex-direction: column;
           }
-          
+
           .stats-section {
             flex-direction: column;
             gap: 1rem;
@@ -739,24 +739,24 @@ function Signup() {
           .signup-header {
             padding: 1.5rem 1rem 1rem;
           }
-          
+
           .signup-form {
             padding: 1.5rem 1rem;
           }
-          
+
           .logo-section {
             flex-direction: column;
             gap: 0.5rem;
           }
-          
+
           .logo-text {
             font-size: 1.4rem;
           }
-          
+
           .form-input {
             padding-left: 2.5rem;
           }
-          
+
           .benefits-section {
             padding: 1rem;
           }
@@ -770,7 +770,7 @@ function Signup() {
             animation: none !important;
             transition: none !important;
           }
-          
+
           .bg-circle {
             animation: none;
           }

@@ -68,17 +68,17 @@ function Login() {
   return (
     <>
       <div className="login-page">
-        {/* Background Decoration */}
+        {}
         <div className="bg-decoration">
           <div className="bg-shape shape-1"></div>
           <div className="bg-shape shape-2"></div>
           <div className="bg-shape shape-3"></div>
         </div>
 
-        {/* Main Login Card */}
+        {}
         <div className="login-container">
           <div className="login-card">
-            {/* Header Section */}
+            {}
             <div className="login-header">
               <div className="logo-container">
                 <h1 className="logo-text">Digital Library</h1>
@@ -91,9 +91,9 @@ function Login() {
               </div>
             </div>
 
-            {/* Login Form */}
+            {}
             <form onSubmit={handleSubmit} noValidate className="login-form">
-              {/* Email Field */}
+              {}
               <div className="form-group">
                 <label className="form-label">Email Address :</label>
                 <div className="input-container">
@@ -112,7 +112,7 @@ function Login() {
                 )}
               </div>
 
-              {/* Password Field */}
+              {}
               <div className="form-group">
                 <div className="label-row">
                   <label className="form-label">Password :</label>
@@ -133,12 +133,12 @@ function Login() {
                 )}
               </div>
 
-              {/* Submit Button */}
+              {}
               <button type="submit" className="submit-btn">
                 Log In
               </button>
 
-              {/* Signup Link */}
+              {}
               <div className="signup-section">
                 <p className="signup-text">
                   Don't have an account?
@@ -190,9 +190,9 @@ function Login() {
         ===================== */
         .login-page {
           min-height: 100vh;
-          background: linear-gradient(135deg, 
-            rgba(99, 102, 241, 0.05) 0%, 
-            rgba(139, 92, 246, 0.05) 50%, 
+          background: linear-gradient(135deg,
+            rgba(99, 102, 241, 0.05) 0%,
+            rgba(139, 92, 246, 0.05) 50%,
             rgba(236, 72, 153, 0.05) 100%);
           display: flex;
           align-items: center;
@@ -662,31 +662,31 @@ function Login() {
           .login-page {
             padding: 1rem;
           }
-          
+
           .login-container {
             max-width: 100%;
           }
-          
+
           .login-header {
             padding: 2rem 1.5rem 1rem;
           }
-          
+
           .login-form {
             padding: 2rem 1.5rem;
           }
-          
+
           .logo-text {
             font-size: 1.5rem;
           }
-          
+
           .welcome-title {
             font-size: 1.5rem;
           }
-          
+
           .alternative-login {
             flex-direction: column;
           }
-          
+
           .stats-section {
             flex-direction: column;
             gap: 1rem;
@@ -697,20 +697,20 @@ function Login() {
           .login-header {
             padding: 1.5rem 1rem 1rem;
           }
-          
+
           .login-form {
             padding: 1.5rem 1rem;
           }
-          
+
           .logo-container {
             flex-direction: column;
             gap: 0.5rem;
           }
-          
+
           .logo-text {
             font-size: 1.3rem;
           }
-          
+
           .form-input {
             padding-left: 2.5rem;
           }

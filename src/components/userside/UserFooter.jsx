@@ -5,7 +5,7 @@ function UserFooter() {
     <>
       <footer className="library-footer">
         <div className="footer-container">
-          {/* Left Section */}
+          {}
           <div className="footer-left">
             <div className="brand-container">
               <div className="brand-icon">📚</div>
@@ -40,7 +40,7 @@ function UserFooter() {
             </div>
           </div>
 
-          {/* Center Section */}
+          {}
           <div className="footer-center">
             <div className="links-header">
               <h4 className="links-title">Quick Links</h4>
@@ -76,7 +76,7 @@ function UserFooter() {
             </ul>
           </div>
 
-          {/* Right Section */}
+          {}
           <div className="footer-right">
             <div className="contact-header">
               <h4 className="contact-title">Contact Info</h4>
@@ -108,7 +108,7 @@ function UserFooter() {
           </div>
         </div>
 
-        {/* Footer Bottom */}
+        {}
         <div className="footer-bottom">
           <div className="bottom-container">
             <div className="copyright">
@@ -470,7 +470,7 @@ function UserFooter() {
             grid-template-columns: 1fr 1fr;
             gap: 2.5rem;
           }
-          
+
           .footer-left {
             grid-column: span 2;
           }
@@ -481,24 +481,24 @@ function UserFooter() {
             padding: 0 1rem;
             gap: 2rem;
           }
-          
+
           .brand-title {
             font-size: 1.3rem;
           }
-          
+
           .brand-icon {
             font-size: 2rem;
           }
-          
+
           .social-icons {
             justify-content: center;
           }
-          
+
           .links-header,
           .contact-header {
             justify-content: center;
           }
-          
+
           .extra-info {
             flex-direction: column;
             gap: 0.75rem;

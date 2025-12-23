@@ -7,7 +7,7 @@ function ContactUs({ handleUserLogout }) {
     <>
       <UserHeader onLogout={handleUserLogout} />
 
-      {/* Hero Section */}
+      {}
       <div className="contact-hero">
         <div className="hero-container">
           <div className="hero-background"></div>
@@ -679,7 +679,7 @@ function ContactUs({ handleUserLogout }) {
           left: 0;
           right: 0;
           bottom: 0;
-          background-image: 
+          background-image:
             linear-gradient(45deg, #e5e7eb 25%, transparent 25%),
             linear-gradient(-45deg, #e5e7eb 25%, transparent 25%),
             linear-gradient(45deg, transparent 75%, #e5e7eb 75%),
@@ -735,7 +735,7 @@ function ContactUs({ handleUserLogout }) {
           .contact-container {
             padding: 0 1.5rem;
           }
-          
+
           .hero-title {
             font-size: 3rem;
           }
@@ -745,20 +745,20 @@ function ContactUs({ handleUserLogout }) {
           .contact-hero {
             margin: 1rem 1rem 3rem;
           }
-          
+
           .hero-title {
             font-size: 2.5rem;
           }
-          
+
           .hero-subtitle {
             font-size: 1.25rem;
           }
-          
+
           .hero-features {
             flex-direction: column;
             gap: 1rem;
           }
-          
+
           .contact-grid {
             gap: 2rem;
           }
@@ -768,24 +768,24 @@ function ContactUs({ handleUserLogout }) {
           .hero-container {
             height: 350px;
           }
-          
+
           .hero-title {
             font-size: 2rem;
           }
-          
+
           .hero-subtitle {
             font-size: 1.1rem;
           }
-          
+
           .contact-main-title {
             font-size: 2rem;
           }
-          
+
           .contact-info-card,
           .contact-form-card {
             padding: 2rem;
           }
-          
+
           .detail-item {
             gap: 1rem;
           }
@@ -795,35 +795,35 @@ function ContactUs({ handleUserLogout }) {
           .contact-container {
             padding: 0 1rem;
           }
-          
+
           .hero-container {
             height: 300px;
           }
-          
+
           .hero-content {
             padding: 1rem;
           }
-          
+
           .hero-title {
             font-size: 1.75rem;
           }
-          
+
           .contact-main-title {
             font-size: 1.75rem;
             flex-direction: column;
             gap: 0.5rem;
           }
-          
+
           .contact-info-card,
           .contact-form-card {
             padding: 1.5rem;
           }
-          
+
           .card-title,
           .form-title {
             font-size: 1.5rem;
           }
-          
+
           .form-input,
           .form-textarea {
             padding-left: 2.5rem;

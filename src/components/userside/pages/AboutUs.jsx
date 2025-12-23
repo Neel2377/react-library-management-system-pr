@@ -8,7 +8,7 @@ function AboutUs({ handleUserLogout }) {
       <UserHeader onLogout={handleUserLogout} />
 
       <div className="about-us-container">
-        {/* Hero Banner */}
+        {}
         <div className="about-hero">
           <div className="hero-image-container">
             <img
@@ -42,7 +42,7 @@ function AboutUs({ handleUserLogout }) {
           </div>
         </div>
 
-        {/* Main Content */}
+        {}
         <div className="about-content-wrapper">
           <div className="about-main-content">
             <div className="content-header">
@@ -188,8 +188,8 @@ function AboutUs({ handleUserLogout }) {
           left: 0;
           right: 0;
           bottom: 0;
-          background: linear-gradient(135deg, 
-            rgba(99, 102, 241, 0.9) 0%, 
+          background: linear-gradient(135deg,
+            rgba(99, 102, 241, 0.9) 0%,
             rgba(139, 92, 246, 0.8) 100%);
         }
 
@@ -478,7 +478,7 @@ function AboutUs({ handleUserLogout }) {
           .about-us-container {
             padding: 0 1.5rem;
           }
-          
+
           .hero-title {
             font-size: 3rem;
           }
@@ -488,15 +488,15 @@ function AboutUs({ handleUserLogout }) {
           .hero-title {
             font-size: 2.5rem;
           }
-          
+
           .hero-subtitle {
             font-size: 1.25rem;
           }
-          
+
           .hero-stats {
             gap: 2rem;
           }
-          
+
           .about-main-content {
             padding: 2rem;
           }
@@ -506,32 +506,32 @@ function AboutUs({ handleUserLogout }) {
           .about-hero {
             margin: 1rem 0 3rem;
           }
-          
+
           .hero-image-container {
             height: 400px;
           }
-          
+
           .hero-title {
             font-size: 2rem;
           }
-          
+
           .hero-subtitle {
             font-size: 1.1rem;
           }
-          
+
           .hero-stats {
             flex-direction: column;
             gap: 1.5rem;
           }
-          
+
           .stat-number {
             font-size: 2rem;
           }
-          
+
           .content-title {
             font-size: 2rem;
           }
-          
+
           .about-grid {
             grid-template-columns: 1fr;
           }
@@ -541,46 +541,46 @@ function AboutUs({ handleUserLogout }) {
           .about-us-container {
             padding: 0 1rem;
           }
-          
+
           .hero-image-container {
             height: 350px;
           }
-          
+
           .hero-content {
             padding: 1rem;
           }
-          
+
           .hero-title {
             font-size: 1.75rem;
           }
-          
+
           .about-main-content {
             padding: 1.5rem;
           }
-          
+
           .content-title {
             font-size: 1.75rem;
             flex-direction: column;
             gap: 0.5rem;
           }
-          
+
           .about-card {
             padding: 1.5rem;
           }
-          
+
           .features-grid {
             grid-template-columns: repeat(2, 1fr);
             gap: 1rem;
           }
-          
+
           .feature-item {
             padding: 1.5rem;
           }
-          
+
           .about-cta {
             padding: 2rem 1rem;
           }
-          
+
           .cta-title {
             font-size: 1.5rem;
           }

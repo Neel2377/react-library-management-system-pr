@@ -21,11 +21,10 @@ function UserHeader({ onLogout }) {
     window.addEventListener("storage", updateUser);
 
     const handleClickOutside = (event) => {
-      // Close dropdown if clicked outside
+
       if (dropdownRef.current && !dropdownRef.current.contains(event.target)) {
         setDropdownOpen(false);
       }
-      // Close mobile menu if clicked outside
       if (
         mobileMenuOpen &&
         mobileMenuRef.current &&
@@ -60,7 +59,7 @@ function UserHeader({ onLogout }) {
     <>
       <nav className="user-header justify-content-between">
         <div className="header-container">
-          {/* Mobile Menu Toggle Button */}
+          {}
           <button
             className={`mobile-menu-toggle ${mobileMenuOpen ? "open" : ""}`}
             onClick={toggleMobileMenu}
@@ -72,7 +71,7 @@ function UserHeader({ onLogout }) {
             <span className="hamburger-line"></span>
           </button>
 
-          {/* Logo/Brand Section */}
+          {}
           <div className="header-brand">
             <NavLink to="/" className="brand-link">
               <div className="brand-content">
@@ -82,7 +81,7 @@ function UserHeader({ onLogout }) {
             </NavLink>
           </div>
 
-          {/* Desktop Navigation Links */}
+          {}
           <div className="header-nav js">
             <ul className="nav-menu">
               <li className="nav-item">
@@ -128,7 +127,7 @@ function UserHeader({ onLogout }) {
             </ul>
           </div>
 
-          {/* User Profile Section */}
+          {}
           <div className="header-profile" ref={dropdownRef}>
             <div className="profile-dropdown">
               <button
@@ -231,7 +230,7 @@ function UserHeader({ onLogout }) {
           </div>
         </div>
 
-        {/* Mobile Navigation Menu */}
+        {}
         <div
           className={`mobile-nav-menu ${mobileMenuOpen ? "show" : ""}`}
           ref={mobileMenuRef}
@@ -357,7 +356,7 @@ function UserHeader({ onLogout }) {
           </ul>
         </div>
 
-        {/* Overlay for mobile menu */}
+        {}
         <div
           className={`mobile-menu-overlay ${mobileMenuOpen ? "show" : ""}`}
           onClick={toggleMobileMenu}
@@ -1026,16 +1025,16 @@ function UserHeader({ onLogout }) {
             padding: 0 1rem 0 3rem; /* Adjust for smaller screens */
             height: 60px;
           }
-          
+
           .brand-text {
             font-size: 1.3rem;
           }
-          
+
           .profile-avatar {
             width: 36px;
             height: 36px;
           }
-          
+
           .dropdown-menu {
             width: 250px;
           }
@@ -1045,21 +1044,21 @@ function UserHeader({ onLogout }) {
           .header-container {
             padding: 0 0.75rem 0 2.5rem;
           }
-          
+
           .brand-text {
             font-size: 1.2rem;
           }
-          
+
           .dropdown-menu {
             right: -50%;
             width: 200px;
           }
-          
+
           .mobile-avatar {
             width: 50px;
             height: 50px;
           }
-          
+
           .mobile-user-name {
             font-size: 1.1rem;
           }
@@ -1069,17 +1068,17 @@ function UserHeader({ onLogout }) {
           .brand-text {
             font-size: 1.1rem;
           }
-          
+
           .mobile-nav-link {
             padding: 1rem 1.25rem;
           }
-          
+
           .mobile-menu-toggle {
             width: 25px;
             height: 20px;
             left: 15px;
           }
-          
+
           .hamburger-line {
             height: 2.5px;
           }
@@ -1093,11 +1092,11 @@ function UserHeader({ onLogout }) {
             animation: none !important;
             transition: none !important;
           }
-          
+
           .mobile-nav-menu {
             transition: none;
           }
-          
+
           .mobile-menu-overlay {
             transition: none;
           }

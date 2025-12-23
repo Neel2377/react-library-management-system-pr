@@ -1,4 +1,3 @@
-/* eslint-disable react-hooks/set-state-in-effect */
 import React, { useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
 
@@ -103,7 +102,7 @@ function MyProfile() {
               </div>
 
               <div className="card-body pt-3">
-                {/* Profile Image */}
+                {}
                 <div className="avatar-section">
                   <div className="avatar-wrapper">
                     <img
@@ -128,7 +127,7 @@ function MyProfile() {
                   </div>
                 </div>
 
-                {/* Username */}
+                {}
                 <div className="form-group">
                   <div className="form-label-wrapper">
                     <i className="fas fa-user"></i>
@@ -151,7 +150,7 @@ function MyProfile() {
                   )}
                 </div>
 
-                {/* Email */}
+                {}
                 <div className="form-group">
                   <div className="form-label-wrapper">
                     <i className="fas fa-envelope"></i>
@@ -174,7 +173,7 @@ function MyProfile() {
                   )}
                 </div>
 
-                {/* Action Buttons */}
+                {}
                 <div className="action-buttons">
                   {editMode ? (
                     <>
@@ -196,7 +195,7 @@ function MyProfile() {
                       Edit Profile
                     </button>
                   )}
-                  {/* Home Button */}
+                  {}
                   <button
                     className="btn btn-home"
                     onClick={() => navigate("/")}
@@ -265,7 +264,7 @@ function MyProfile() {
           overflow: hidden;
           transition: transform 0.3s ease, box-shadow 0.3s ease;
           max-width: 90vh;
-          
+
         }
 
         .profile-card:hover {
@@ -464,12 +463,12 @@ function MyProfile() {
         .btn i {
           font-size: 18px;
         }
-        
+
         .btn-home {
           background: linear-gradient(135deg, var(--success) 0%, #34d399 100%);
           color: white;
         }
-        
+
         .btn-home:hover{
         transform: translateY(-2px);
           box-shadow: 0 10px 20px rgba(99, 102, 241, 0.2);
