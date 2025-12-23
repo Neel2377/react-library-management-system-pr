@@ -415,13 +415,29 @@ function Dashboard({ books = [], users = [], setUsers }) {
         /* =====================
            DASHBOARD CONTAINER
         ===================== */
-        .admin-dashboard {
-  margin-left: 250px; /* Adjust based on your sidebar width */
-  padding: 2rem;
+        /* DASHBOARD LAYOUT FIX */
+.admin-dashboard {
   background: var(--admin-bg);
   min-height: 100vh;
+  padding: 2rem;
   animation: fadeIn 0.6s ease;
 }
+
+/* DESKTOP ONLY */
+@media (min-width: 1200px) {
+  .admin-dashboard {
+    margin-left: 250px;
+  }
+}
+
+/* MOBILE + TABLET */
+@media (max-width: 1199px) {
+  .admin-dashboard {
+    margin-left: 0 !important;
+    padding: 1rem;
+  }
+}
+
 
 /* For centering the content */
 .content-wrapper {
