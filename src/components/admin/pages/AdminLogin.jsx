@@ -46,7 +46,6 @@ function AdminLogin() {
 
     setIsLoading(true);
 
-    // Simulate API call
     await new Promise((resolve) => setTimeout(resolve, 800));
 
     if (form.email === "admin@gmail.com" && form.password === "admin123") {
@@ -65,7 +64,7 @@ function AdminLogin() {
   return (
     <>
       <div className="admin-login-page">
-        {/* Background Effects */}
+        {}
         <div className="admin-bg-effects">
           <div className="admin-bg-shape shape-1"></div>
           <div className="admin-bg-shape shape-2"></div>
@@ -73,27 +72,24 @@ function AdminLogin() {
           <div className="admin-bg-grid"></div>
         </div>
 
-        {/* Main Container */}
+        {}
         <div className="admin-login-container">
-          {/* Admin Login Card */}
+          {}
           <div className="admin-login-card">
-            {/* Admin Header */}
+            {}
             <div className="admin-header">
               <div className="admin-title-section">
-                <h1 className="admin-title">Admin Access</h1>
-                <p className="admin-subtitle">
-                  Secure admin dashboard for library management
-                </p>
+                <h1 className="admin-title">Admin Login</h1>
               </div>
             </div>
 
-            {/* Admin Login Form */}
+            {}
             <form
               onSubmit={handleSubmit}
               noValidate
               className="admin-login-form"
             >
-              {/* Email Field */}
+              {}
               <div className="form-group">
                 <label className="form-label">Admin Email :</label>
                 <div className="input-container">
@@ -113,7 +109,7 @@ function AdminLogin() {
                 )}
               </div>
 
-              {/* Password Field */}
+              {}
               <div className="form-group">
                 <label className="form-label">Admin Password :</label>
                 <div className="input-container">
@@ -133,7 +129,7 @@ function AdminLogin() {
                 )}
               </div>
 
-              {/* Submit Button */}
+              {}
               <button
                 type="submit"
                 className="admin-submit-btn"
@@ -151,7 +147,7 @@ function AdminLogin() {
               <div className="password-note">
                 Default: admin@gmail.com / admin123
               </div>
-              {/* Back to User Login */}
+              {}
               <div className="back-section">
                 <NavLink to="/login" className="back-link">
                   <span className="back-icon">←</span>
@@ -268,7 +264,7 @@ function AdminLogin() {
           left: 0;
           right: 0;
           bottom: 0;
-          background-image: 
+          background-image:
             linear-gradient(rgba(14, 165, 233, 0.05) 1px, transparent 1px),
             linear-gradient(90deg, rgba(14, 165, 233, 0.05) 1px, transparent 1px);
           background-size: 50px 50px;
@@ -805,25 +801,25 @@ function AdminLogin() {
           .admin-login-page {
             padding: 1rem;
           }
-          
+
           .admin-login-container {
             max-width: 100%;
           }
-          
+
           .admin-header,
           .admin-login-form {
             padding: 1.5rem;
           }
-          
+
           .admin-title {
             font-size: 1.7rem;
           }
-          
+
           .activity-stats {
             flex-direction: column;
             gap: 1rem;
           }
-          
+
           .back-section {
             flex-direction: column;
             gap: 1rem;
@@ -836,21 +832,21 @@ function AdminLogin() {
           .admin-login-form {
             padding: 1.25rem;
           }
-          
+
           .admin-title {
             font-size: 1.5rem;
             flex-direction: column;
             gap: 0.5rem;
           }
-          
+
           .title-icon {
             font-size: 1.5rem;
           }
-          
+
           .form-input {
             padding-left: 2.5rem;
           }
-          
+
           .security-check {
             flex-direction: column;
             align-items: flex-start;
@@ -866,11 +862,11 @@ function AdminLogin() {
             animation: none !important;
             transition: none !important;
           }
-          
+
           .admin-bg-shape {
             animation: none;
           }
-          
+
           .loading-spinner {
             animation: none;
           }

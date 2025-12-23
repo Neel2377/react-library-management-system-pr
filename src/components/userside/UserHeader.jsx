@@ -1043,6 +1043,7 @@ function UserHeader({ onLogout }) {
         @media (max-width: 576px) {
           .header-container {
             padding: 0 0.75rem 0 2.5rem;
+            
           }
 
           .brand-text {

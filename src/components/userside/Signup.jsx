@@ -89,13 +89,7 @@ function Signup() {
             <div className="signup-header">
               <div className="header-content">
                 <div className="logo-section">
-                  <h1 className="logo-text">Join Our Library</h1>
-                </div>
-                <div className="welcome-section">
-                  <h2 className="welcome-title">Create Your Account</h2>
-                  <p className="welcome-subtitle">
-                    Start your reading journey with thousands of books
-                  </p>
+                  <h1 className="logo-text">Signup</h1>
                 </div>
               </div>
             </div>

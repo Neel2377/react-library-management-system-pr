@@ -827,7 +827,7 @@ function Home() {
         .category-count {
           color: var(--text-light);
           font-size: 0.9rem;
-          padding: 0.5rem 1rem;
+          padding: 0.5rem 1.5rem;
           background: var(--secondary-color);
           border-radius: 8px;
           font-weight: 600;

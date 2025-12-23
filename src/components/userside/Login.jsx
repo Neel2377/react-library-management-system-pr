@@ -81,13 +81,7 @@ function Login() {
             {}
             <div className="login-header">
               <div className="logo-container">
-                <h1 className="logo-text">Digital Library</h1>
-              </div>
-              <div className="welcome-text">
-                <h2 className="welcome-title">Welcome Back</h2>
-                <p className="welcome-subtitle">
-                  Sign in to access your library account
-                </p>
+                <h1 className="logo-text">Login</h1>
               </div>
             </div>
 
