@@ -1,0 +1,364 @@
+/* =====================
+   ABOUT PAGE ROOT
+===================== */
+.about-page {
+  --primary-color: #6366f1;
+  --primary-light: #818cf8;
+  --primary-dark: #4f46e5;
+  --secondary-color: #f1f5f9;
+  --accent-color: #8b5cf6;
+  --text-color: #1e293b;
+  --text-light: #64748b;
+  --card-bg: #ffffff;
+  --shadow: 0 10px 25px rgba(0, 0, 0, 0.08);
+  --shadow-hover: 0 20px 40px rgba(0, 0, 0, 0.12);
+  --radius: 16px;
+  --transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+
+  background: linear-gradient(135deg, #f8fafc 0%, #f1f5f9 100%);
+  font-family: "Inter", -apple-system, BlinkMacSystemFont, sans-serif;
+  color: var(--text-color);
+}
+
+/* =====================
+   SAFE RESET
+===================== */
+.about-page *,
+.about-page *::before,
+.about-page *::after {
+  box-sizing: border-box;
+}
+
+/* =====================
+   CONTAINER
+===================== */
+.about-page .about-us-container {
+  max-width: 1400px;
+  margin: 0 auto;
+  padding: 0 2rem;
+}
+
+/* =====================
+   HERO SECTION
+===================== */
+.about-page .about-hero {
+  position: relative;
+  margin: 2rem 0 4rem;
+  border-radius: var(--radius);
+  overflow: hidden;
+  box-shadow: var(--shadow);
+}
+
+.about-page .hero-image-container {
+  height: 500px;
+  position: relative;
+}
+
+.about-page .hero-image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  filter: brightness(0.8);
+  transition: transform 0.5s ease;
+}
+
+.about-page .about-hero:hover .hero-image {
+  transform: scale(1.02);
+}
+
+.about-page .hero-overlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    135deg,
+    rgba(99, 102, 241, 0.9),
+    rgba(139, 92, 246, 0.8)
+  );
+}
+
+.about-page .hero-content {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  color: #fff;
+  padding: 2rem;
+  animation: fadeInUp 0.8s ease;
+}
+
+.about-page .hero-text-wrapper {
+  max-width: 800px;
+}
+
+.about-page .hero-title {
+  font-size: 3.2rem;
+  font-weight: 800;
+  margin-bottom: 1rem;
+  line-height: 1.2;
+}
+
+.about-page .hero-subtitle {
+  font-size: 1.4rem;
+  opacity: 0.9;
+  margin-bottom: 3rem;
+}
+
+/* =====================
+   HERO STATS
+===================== */
+.about-page .hero-stats {
+  display: flex;
+  justify-content: center;
+  gap: 4rem;
+}
+
+.about-page .stat-item {
+  text-align: center;
+}
+
+.about-page .stat-number {
+  font-size: 2.4rem;
+  font-weight: 800;
+}
+
+.about-page .stat-label {
+  font-size: 0.9rem;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+/* =====================
+   MAIN CONTENT
+===================== */
+.about-page .about-main-content {
+  background: var(--card-bg);
+  border-radius: var(--radius);
+  padding: 3rem;
+  box-shadow: var(--shadow);
+}
+
+.about-page .content-header {
+  text-align: center;
+  margin-bottom: 3rem;
+}
+
+.about-page .content-title {
+  font-size: 2.3rem;
+  font-weight: 700;
+  margin-bottom: 1rem;
+}
+
+.about-page .content-intro {
+  font-size: 1.15rem;
+  color: var(--text-light);
+  max-width: 600px;
+  margin: 0 auto;
+  line-height: 1.6;
+}
+
+/* =====================
+   ABOUT GRID
+===================== */
+.about-page .about-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 2rem;
+  margin-bottom: 3rem;
+}
+
+/* =====================
+   ABOUT CARD FIX (PATCH)
+===================== */
+
+.about-page .about-card {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start;
+  height: 100%;
+  text-align: center;
+  background: #ffffff;
+  border-radius: 16px;
+  box-shadow: 0 12px 30px rgba(0, 0, 0, 0.08);
+  transition: box-shadow 0.3s ease, transform 0.3s ease;
+  padding: 25px;
+}
+
+/* Optional hover effect */
+.about-page .about-card:hover {
+  box-shadow: 0 20px 45px rgba(0, 0, 0, 0.12);
+  transform: translateY(-6px);
+}
+
+
+/* Keep icon nicely spaced */
+.about-page .about-card .card-icon {
+  margin-bottom: 1.25rem;
+}
+
+/* Title alignment fix */
+.about-page .about-card .card-title {
+  margin-left: 0;
+  text-align: center;
+}
+
+/* Text spacing + readability */
+.about-page .about-card .card-text {
+  margin-top: 0.5rem;
+  flex-grow: 1;
+  padding: 10px; 
+}
+
+/* =====================
+   MOBILE CARD FIX
+===================== */
+@media (max-width: 576px) {
+  .about-page .about-card {
+    padding: 2rem 1.75rem;
+  }
+}
+
+
+/* =====================
+   DETAILS SECTION
+===================== */
+.about-page .about-details {
+  margin: 4rem 0;
+}
+
+.about-page .details-title {
+  font-size: 2rem;
+  font-weight: 700;
+  margin-bottom: 1.5rem;
+  position: relative;
+  padding-bottom: 1rem;
+}
+
+.about-page .details-title::after {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 60px;
+  height: 4px;
+  background: linear-gradient(
+    135deg,
+    var(--primary-color),
+    var(--accent-color)
+  );
+  border-radius: 2px;
+}
+
+.about-page .details-text {
+  color: var(--text-light);
+  line-height: 1.8;
+  font-size: 1.05rem;
+}
+
+/* =====================
+   FEATURES
+===================== */
+.about-page .features-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 2rem;
+}
+
+.about-page .feature-item {
+  background: var(--secondary-color);
+  padding: 2rem;
+  border-radius: 12px;
+  text-align: center;
+  transition: var(--transition);
+}
+
+.about-page .feature-item:hover {
+  transform: translateY(-3px);
+  box-shadow: var(--shadow);
+}
+
+/* =====================
+   CTA
+===================== */
+.about-page .about-cta {
+  text-align: center;
+  padding: 3rem;
+  margin-top: 4rem;
+  border-radius: var(--radius);
+  background: linear-gradient(135deg, var(--secondary-color), #ffffff);
+  border: 2px dashed var(--primary-light);
+}
+
+.about-page .btn-cta {
+  background: linear-gradient(
+    135deg,
+    var(--primary-color),
+    var(--accent-color)
+  );
+  color: #ffffff;
+  border: none;
+  padding: 1rem 2.5rem;
+  border-radius: 50px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: var(--transition);
+}
+
+.about-page .btn-cta:hover {
+  transform: translateY(-2px);
+  box-shadow: var(--shadow);
+}
+
+/* =====================
+   RESPONSIVE
+===================== */
+@media (max-width: 768px) {
+  .about-page .hero-title {
+    font-size: 2rem;
+  }
+
+  .about-page .hero-stats {
+    flex-direction: column;
+    gap: 1.5rem;
+  }
+
+  .about-page .about-main-content {
+    padding: 2rem;
+  }
+}
+
+@media (max-width: 576px) {
+  .about-page .hero-title {
+    font-size: 1.7rem;
+  }
+
+  .about-page .about-main-content {
+    padding: 1.5rem;
+  }
+}
+
+/* =====================
+   ANIMATION
+===================== */
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* =====================
+   REDUCED MOTION
+===================== */
+@media (prefers-reduced-motion: reduce) {
+  .about-page * {
+    animation: none !important;
+    transition: none !important;
+  }
+}

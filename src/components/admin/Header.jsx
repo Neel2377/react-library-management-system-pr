@@ -14,7 +14,7 @@ function Header() {
 
   const handleLogout = () => {
     localStorage.removeItem("isAdminLoggedIn");
-    navigate("/admin-login");
+    navigate("/login");
   };
 
   return (
@@ -29,9 +29,7 @@ function Header() {
           ☰
         </button>
 
-        <h6 className="header-title d-none d-md-block">
-          Dashboard Overview
-        </h6>
+        <h6 className="header-title d-none d-md-block">Dashboard Overview</h6>
 
         <div className="profile">
           <img
