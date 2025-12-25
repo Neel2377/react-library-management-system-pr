@@ -55,14 +55,14 @@ function ViewBooks({ list, handleDelete, handleEdit }) {
                               <button
                                 type="button"
                                 onClick={() => handleDelete(id)}
-                                className="btn btn-danger btn-sm w-50 py-1 me-1  mx-auto"
+                                className="btn btn-danger btn-sm w-50 py-1 px-sm-5 mx-auto"
                               >
                                 Delete
                               </button>
                               <button
                                 type="button"
                                 onClick={() => handleEdit(id)}
-                                className="btn btn-warning btn-sm w-50 mx-auto py-1 my-1"
+                                className="btn btn-warning btn-sm w-50 mx-auto py-1 px-sm-5 my-1"
                               >
                                 Edit
                               </button>

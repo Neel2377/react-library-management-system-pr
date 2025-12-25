@@ -131,10 +131,6 @@ function Dashboard({ books = [], users = [], setUsers }) {
                 <div className="stat-value text-white fs-1">{s.value}</div>
                 <div className="stat-label text-white fs-4">{s.label}</div>
               </div>
-
-              <div className="stat-footer">
-                <div className="stat-progress"></div>
-              </div>
             </div>
           ))}
         </div>
@@ -150,44 +146,40 @@ function Dashboard({ books = [], users = [], setUsers }) {
               </div>
             </div>
 
-            <div className="table-container">
-              <table className="data-table">
+            <div className="table-container text-center">
+              <table className="data-table table table-bordered table-striped table-hover">
                 <thead>
                   <tr>
-                    <th className="table-index">#</th>
-                    <th className="table-book">Book</th>
-                    <th className="table-author">Author</th>
-                    <th className="table-category">Category</th>
-                    <th className="table-stock">Stock</th>
-                    <th className="table-status">Status</th>
+                    <th className="table-index text-center">#</th>
+                    <th className="table-book text-center">Book</th>
+                    <th className="table-author text-center">Author</th>
+                    <th className="table-stock text-center">Stock</th>
+                    <th className="table-status text-center">Status</th>
                   </tr>
                 </thead>
                 <tbody>
                   {paginatedRecentBooks.length ? (
                     paginatedRecentBooks.map((b, i) => (
                       <tr key={b.id} className="data-row">
-                        <td className="table-index">
+                        <td className="table-index index-center">
                           <div className="index-badge">
                             {startBookIndex + i + 1}
                           </div>
                         </td>
                         <td className="table-book">
                           <div className="book-info">
-                            <div className="book-title">{b.name}</div>
+                            <div className="book-title text-center">{b.name}</div>
                             <div className="book-id">ID: {b.id}</div>
                           </div>
                         </td>
                         <td className="table-author">
-                          <div className="author-info">
-                            <span className="author-icon">✍️</span>
+                          <div className="author-info author-center">
                             {b.author}
                           </div>
                         </td>
-                        <td className="table-category">
-                          <span className="category-badge">{b.category}</span>
-                        </td>
+                       
                         <td className="table-stock">
-                          <div className="stock-count">{b.count}</div>
+                          <div className="stock-count text-center">{b.count}</div>
                         </td>
                         <td className="table-status">
                           <div
